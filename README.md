@@ -49,6 +49,15 @@ Open `ProjectSettings -> UniEnum` and set the generation target.
 |Tag|TagName|
 
 
+### How to manually update scene variables on batch build
+
+Call the following method.
+
+```
+UnityConstantValuesGenerator.UpdateSceneValues(EditorBuildSettingScenes[] scenes)
+```
+
+
 ### License
 
 This library is under the MIT License.
