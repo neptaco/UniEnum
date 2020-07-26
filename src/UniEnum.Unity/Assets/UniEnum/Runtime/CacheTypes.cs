@@ -66,7 +66,7 @@ namespace UniEnumUtils
 
         private static IUnderlyingOperation<T> GetOperation()
         {
-            switch (Type.GetTypeCode(UnderlyingType))
+            switch (UnderlyingTypeCode)
             {
                 case TypeCode.SByte: return SByteEnum<T>.Operation;
                 case TypeCode.Byte: return ByteEnum<T>.Operation;
