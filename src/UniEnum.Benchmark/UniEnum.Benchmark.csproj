@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>UniEnumBenchmark</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
+      <PackageReference Include="FastEnum" Version="1.5.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\UniEnum.NetCore\UniEnum.NetCore.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Models\EnumTypes.tt">
+        <Generator>TextTemplatingFileGenerator</Generator>
+        <LastGenOutput>EnumTypes.cs</LastGenOutput>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Models\EnumTypes.cs">
+        <AutoGen>True</AutoGen>
+        <DesignTime>True</DesignTime>
+        <DependentUpon>EnumTypes.tt</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+</Project>

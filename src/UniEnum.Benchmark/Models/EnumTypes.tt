@@ -1,0 +1,52 @@
+<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    var typeInfos = new[]
+    {
+        new TypeInfo("short", 1),
+        new TypeInfo("int", 1),
+        new TypeInfo("int", 2),
+    };
+#>
+using System;
+using UniEnumUtils;
+
+namespace UniEnumTests
+{
+<# foreach (var type in typeInfos) { #>
+    public enum <#= type.EnumType #> : <#= type.TypeName #>
+    {
+<#
+        var range = Enumerable.Range(1, 1024);
+        var types = string.Join(", ", range.Select(v => $"Type{v * type.Step} = {v * type.Step}"));
+#>
+        <#= types #>
+    }
+<# } #>
+}
+
+<#+
+    class TypeInfo
+    {
+        public readonly string TypeName;
+        public readonly string Title;
+        public readonly string EnumType;
+        public readonly int Step;
+    
+        public TypeInfo(string typeName, int step)
+        {
+            TypeName = typeName;
+            Title = $"{Char.ToUpperInvariant(typeName[0])}{typeName.Substring(1)}";
+            Step = step;
+            EnumType = $"{Title}Enum{Step}";
+        }
+
+        public override string ToString()
+        {
+            return TypeName;
+        }
+    }
+#>

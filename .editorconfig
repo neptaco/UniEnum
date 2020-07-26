@@ -1,0 +1,18 @@
+# top-most EditorConfig file
+root = true
+
+[*.cs]
+indent_size = 4
+insert_final_newline = true
+charset = utf-8
+
+# CSharp
+[*.cs]
+dotnet_sort_system_directives_first = true
+#dotnet_style_qualification_for_field = true
+#dotnet_style_qualification_for_property = true
+#dotnet_style_qualification_for_method = true
+#dotnet_style_qualification_for_event = true
+
+#csharp_style_deconstructed_variable_declaration = false:none
+#csharp_style_pattern_matching_over_as_with_null_check = false:none

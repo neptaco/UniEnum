@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniEnum.NetCore", "src\UniEnum.NetCore\UniEnum.NetCore.csproj", "{3D214CDF-24EA-473F-801F-51A40B917E9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniEnum.NetCore.Tests", "src\UniEnum.NetCore.Tests\UniEnum.NetCore.Tests.csproj", "{2C73EC55-CBA5-4B3E-8003-A21F3E13FDCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniEnum.Benchmark", "src\UniEnum.Benchmark\UniEnum.Benchmark.csproj", "{00974BE2-49F1-4E42-8F8E-656E21481C80}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D214CDF-24EA-473F-801F-51A40B917E9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D214CDF-24EA-473F-801F-51A40B917E9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D214CDF-24EA-473F-801F-51A40B917E9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D214CDF-24EA-473F-801F-51A40B917E9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C73EC55-CBA5-4B3E-8003-A21F3E13FDCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C73EC55-CBA5-4B3E-8003-A21F3E13FDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C73EC55-CBA5-4B3E-8003-A21F3E13FDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C73EC55-CBA5-4B3E-8003-A21F3E13FDCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00974BE2-49F1-4E42-8F8E-656E21481C80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00974BE2-49F1-4E42-8F8E-656E21481C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00974BE2-49F1-4E42-8F8E-656E21481C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00974BE2-49F1-4E42-8F8E-656E21481C80}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

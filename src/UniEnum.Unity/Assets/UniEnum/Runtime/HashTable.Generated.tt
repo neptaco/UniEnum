@@ -1,0 +1,204 @@
+<#@ template language="C#" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Net.Mime" #>
+<#@ import namespace="System.Security.Permissions" #>
+<#@ import namespace="System.Net.NetworkInformation" #>
+<#
+var types = new []
+{
+    new TypeInfo(typeof(string), true, ignoreCase: true, prefix: "IgnoreCase"),
+    new TypeInfo(typeof(string), true, ignoreCase: false),
+    new TypeInfo(typeof(int), true),
+    new TypeInfo(null, false),
+};
+
+#>
+// <auto-genereted>
+// This file generated from UniEnum.
+// </auto-generated>
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+
+namespace UniEnumUtils
+{
+<# foreach (var type in types) { #>
+    #region <#= type.ClassName #>
+
+    internal sealed class <#= type.ClassName #><<#= type.IsSpecialized ? "" : $"{type.TypeName}, " #>TValue>
+    {
+        private readonly Entry[][] _buckets;
+        private readonly int _indexFor;
+
+        public delegate <#= type.TypeName #> KeySelector(in TValue value);
+
+        public <#= type.ClassName #>(TValue[] values, KeySelector keySelector)
+        {
+            const float loadFactor = 0.42f;
+            var capacity = values.Length;
+            var tableSize = HashTableUtility.CalculateCapacity(capacity, loadFactor);
+            _buckets = new Entry[tableSize][];
+            _indexFor = _buckets.Length - 1;
+
+            foreach (var v in values)
+            {
+                Add(keySelector(v), v);
+            }
+        }
+
+        internal void Add(<#= type.TypeName #> key, TValue value)
+        {
+            var hash = <#= type.ToGetHashStringCode() #>;
+            var entry = new Entry(key, value);
+
+            var index = hash & _indexFor;
+            Entry[] entries = _buckets[index];
+            if (entries == null)
+            {
+                _buckets[index] = new[] { entry };
+            }
+            else
+            {
+　　　　　　　　　　　// Duplicates will not be checked.
+
+                var newArray = new Entry[entries.Length + 1];
+                Array.Copy(entries, newArray, entries.Length);
+                entries = newArray;
+                entries[entries.Length - 1] = entry;
+                _buckets[index] = entries;
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public bool TryGetValue(<#= type.TypeName #> key, out TValue value)
+        {
+            var hash = <#= type.ToGetHashStringCode() #>;
+            var index = hash & _indexFor;
+            Entry[] entries = _buckets[index];
+
+            if (entries == null)
+            {
+                value = default;
+                return false;
+            }
+
+<# if (type.IsSpecialized) { #>
+            if (entries[0].Key.Equals(key<#= type.EqualsArgs #>))
+<# } else { #>
+            if (EqualityComparer<TKey>.Default.Equals(entries[0].Key, key))
+<# } #>
+            {
+                value = entries[0].Value;
+                return true;
+            }
+
+            return TryGetValueSlow(key, entries, out value);
+        }
+
+        private bool TryGetValueSlow(<#= type.TypeName #> key, Entry[] entries, out TValue value)
+        {
+            for (int i = 1; i < entries.Length; i++)
+            {
+<# if (type.IsSpecialized) { #>
+                if (entries[i].Key.Equals(key<#= type.EqualsArgs #>))
+<# } else { #>
+                if (EqualityComparer<TKey>.Default.Equals(entries[i].Key, key))
+<# } #>
+                {
+                    value = entries[i].Value;
+                    return true;
+                }
+            }
+
+            value = default;
+            return false;
+        }
+
+        private readonly struct Entry
+        {
+            public readonly <#= type.TypeName #> Key;
+            public readonly TValue Value;
+
+            public Entry(<#= type.TypeName #> key, TValue value)
+            {
+                Key = key;
+                Value = value;
+            }
+        }
+    }
+
+    #endregion
+
+<# } #>    
+}
+
+<#+
+    class TypeInfo
+    {
+        public readonly Type Type;
+        public readonly bool IsSpecialized;
+        public readonly string TypeName;
+        public readonly TypeCode TypeCode;
+        public readonly string Title;
+        public readonly string EnumType;
+        public readonly bool IgnoreCase;
+        private readonly string Prefix;
+
+        public TypeInfo(Type type, bool isSpecialized, bool ignoreCase = false, string prefix = null)
+        {
+            Type = type;
+            IsSpecialized = isSpecialized;
+            TypeName = type?.Name ?? "TKey";
+            TypeCode = Type.GetTypeCode(type);
+            Title = $"{Char.ToUpperInvariant(TypeName[0])}{TypeName.Substring(1)}";
+            EnumType = $"{Title}Enum";
+            IgnoreCase = ignoreCase;
+            Prefix = prefix;
+        }
+
+        public string TitleCase(string v) => $"{Char.ToUpperInvariant(v[0])}{v.Substring(1)}";
+
+        public string ClassName 
+        {
+            get
+            {
+                if (IsSpecialized)
+                    return $"{Prefix}{TitleCase(TypeName)}HashTable";
+                return Prefix + "HashTable";
+            }
+        }
+
+        public string ToGetHashStringCode()
+        {
+            if (IsSpecialized)
+            {
+                if (Type == typeof(string) && IgnoreCase)
+                {
+                    return "StringComparer.OrdinalIgnoreCase.GetHashCode(key)";
+                }
+                return "key.GetHashCode()";
+            }
+            return "EqualityComparer<TKey>.Default.GetHashCode(key)";
+        }
+
+        public string EqualsArgs
+        {
+            get
+            {
+                if (Type == typeof(string) && IgnoreCase)
+                {
+                    return ", StringComparison.OrdinalIgnoreCase";
+                }
+                return "";
+            }
+        }
+
+
+
+        public override string ToString()
+        {
+            return TypeName;
+        }
+    }
+#>

@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+
+        <IsPackable>false</IsPackable>
+
+        <RootNamespace>UniEnum.NetCore.Test</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="nunit" Version="3.12.0" />
+        <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+        <PackageReference Include="System.Linq" Version="4.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Include="..\UniEnum.Unity\Assets\UniEnum.Tests\**\*.cs" Exclude="..\UniEnum.Unity\Assets\UniEnum.Tests\Editor\**\*" />
+        <Content Include="..\UniEnum.Unity\Assets\UniEnum.Tests\**\*.tt">
+         <Generator>TextTemplatingFileGenerator</Generator>
+        </Content>
+        
+        <Compile Update="..\UniEnum.Unity\Assets\UniEnum.Tests\Runtime\UnderlyingTypesTest.Generated.cs">
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+            <DependentUpon>UnderlyingTypesTest.Generated.tt</DependentUpon>
+        </Compile>
+        <Content Update="..\UniEnum.Unity\Assets\UniEnum.Tests\Runtime\UnderlyingTypesTest.Generated.tt">
+            <Generator>TextTemplatingFileGenerator</Generator>
+            <LastGenOutput>UnderlyingTypesTest.Generated.cs</LastGenOutput>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\UniEnum.NetCore\UniEnum.NetCore.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,17 @@
+{
+    "name": "UniEnum.Editor",
+    "references": [
+        "GUID:f5d4aa43264534652be2cfc277be0516"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

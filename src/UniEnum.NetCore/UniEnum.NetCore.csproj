@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>8.0</LangVersion>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="..\UniEnum.Unity\Assets\UniEnum\**\*.cs" Exclude="..\UniEnum.Unity\Assets\UniEnum\Editor\**\*;" />
+
+        <Compile Update="..\UniEnum.Unity\Assets\UniEnum\Runtime\HashTable.Generated.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>HashTable.Generated.tt</DependentUpon>
+        </Compile>
+
+        <None Include="..\UniEnum.Unity\Assets\UniEnum\Runtime\HashTable.Generated.tt">
+            <Generator>TextTemplatingFileGenerator</Generator>
+            <LastGenOutput>HashTable.Generated.cs</LastGenOutput>
+            <Link>Runtime\HashTable.Generated.tt</Link>
+        </None>
+
+        <Compile Update="..\UniEnum.Unity\Assets\UniEnum\Runtime\UniEnum_Underlying.Generated.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>UniEnum_Underlying.Generated.tt</DependentUpon>
+        </Compile>
+
+        <None Include="..\UniEnum.Unity\Assets\UniEnum\Runtime\UniEnum_Underlying.Generated.tt">
+            <Generator>TextTemplatingFileGenerator</Generator>
+            <LastGenOutput>UniEnum_Underlying.Generated.cs</LastGenOutput>
+            <Link>Runtime\UniEnum_Underlying.Generated.tt</Link>
+        </None>
+
+
+    </ItemGroup>
+
+</Project>
