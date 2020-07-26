@@ -19,6 +19,6 @@
 
 ### Added
 
-- Fast utilitiy methods for enum. (GetValue, GetNames, IsDefined, TryParase etc..)
+- Fast utility methods for enum. (GetValue, GetNames, IsDefined, TryParse etc..)
 - Automate the creation of Unity's constant values as enumerations. (Scene, Tag, Layer, SortingLayer)
 
