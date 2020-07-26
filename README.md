@@ -39,9 +39,9 @@ Download .unitypackage from [Release Page](https://github.com/neptaco/UniEnum/re
 
 ## Generate Unity constant values
 
-Setup generate targets from `ProjectSettings -> UniEnum`.
+Open `ProjectSettings -> UniEnum` and set the generation target.
 
-|Target|Generate classes|
+|Target|Generated classes|
 |----|-------|
 |Scene|SceneId<br/>SceneName<br/>ScenePath|
 |Layer|LayerId<br/>LayerMaskValue|
