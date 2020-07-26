@@ -29,10 +29,10 @@ Download .unitypackage from [Release Page](https://github.com/neptaco/UniEnum/re
 
 |.NET|UniEnum|
 |----|-------|
-|Enum.GetNames(typeof(EnumType))|UniEnum.GetNames\<EnumTypes>()|
-|Enum.GetValues(typeof(EnumType))|UniEnum.GetValues\<EnumTypes>()|
-|Enum.IsDefined(typeof(EnumType), v)|UniEnum.IsDefined\<EnumTypes>(v) [^1]|
-|Enum.TryParse(typeof(EnumType))|UniEnum.TryParse\<EnumTypes>(v)|
+|Enum.GetNames(typeof(EnumType))|UniEnum.GetNames\<EnumType>()|
+|Enum.GetValues(typeof(EnumType))|UniEnum.GetValues\<EnumType>()|
+|Enum.IsDefined(typeof(EnumType), v)|UniEnum.IsDefined\<EnumType>(v) [^1]|
+|Enum.TryParse(typeof(EnumType))|UniEnum.TryParse\<EnumType>(v)|
 
 
 [^1]: `UniEnum.IsDefined` is case sensitive.
