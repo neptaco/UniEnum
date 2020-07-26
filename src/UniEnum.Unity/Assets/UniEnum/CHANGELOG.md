@@ -3,8 +3,6 @@
 ## [Unreleased]
 
 ### Added
-- Added fast enum utility methods (Values, Names, IsDefined, TryParse)
-- Added the feature to create Unity constants with enumerated values from scene, sortingLayer, Layer and Tag
 
 ### Change
 
@@ -17,5 +15,10 @@
 ### Security
 
 
-## [0.1.0] - 2020/07/18
+## [0.1.0] - 2020/07/26
+
+### Added
+
+- Fast utilitiy methods for enum. (GetValue, GetNames, IsDefined, TryParase etc..)
+- Automate the creation of Unity's constant values as enumerations. (Scene, Tag, Layer, SortingLayer)
 
