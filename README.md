@@ -19,7 +19,7 @@ Download .unitypackage from [Release Page](https://github.com/neptaco/UniEnum/re
 ```manifest.json
 {
     "dependencies": {
-        "jp.xtals.unienum": "https://github.com/neptaco/UniEnum.git?path=src/UniEnum.Unity/Assets/UniEnum"
+        "com.xtaltools.unienum": "https://github.com/neptaco/UniEnum.git?path=src/UniEnum.Unity/Assets/UniEnum"
     }
 }
 ```
