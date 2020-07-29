@@ -6,15 +6,15 @@
 <#
     var typeInfos = new[]
     {
-        new TypeInfo("sbyte", false, 1),
-        new TypeInfo("byte", true, 1),
-        new TypeInfo("short", false, 1),
-        new TypeInfo("ushort", true, 1),
-        new TypeInfo("int", false, 1),
-        new TypeInfo("int", false, 2),
-        new TypeInfo("uint", true, 1),
-        new TypeInfo("long", false, 1),
-        new TypeInfo("ulong", true, 1),
+        new TypeInfo("sbyte", false, 1, 1),
+        new TypeInfo("byte", true, 1, 1),
+        new TypeInfo("short", false, 1, 1),
+        new TypeInfo("ushort", true, 1, 1),
+        new TypeInfo("int", false, 1, 1),
+        new TypeInfo("int", false, 1, 2),
+        new TypeInfo("uint", true, 1, 1),
+        new TypeInfo("long", false, 1, 1),
+        new TypeInfo("ulong", true, 1, 1),
     };
 #>
 using System;
@@ -24,11 +24,11 @@ using UniEnumUtils;
 namespace UniEnumTests
 {
 <# foreach (var type in typeInfos) { #>
-    public enum <#= type.Title #>Enum : <#= type.TypeName #>
+    public enum <#= type.EnumType #> : <#= type.TypeName #>
     {
 <#
-        var range = Enumerable.Range(1, 32);
-        var types = string.Join(", ", range.Select(v => $"Type{v} = {v * type.Step}"));
+        var range = Enumerable.Range(type.Start, 32);
+        var types = string.Join(", ", range.Select(v => $"{type.GetName(v)} = {type.GetValue(v)}"));
 #>
         <#= types #>
     }
@@ -36,37 +36,43 @@ namespace UniEnumTests
     public class <#= type.EnumType #>Test
     {
         [Test]
-        public void <#= type.EnumType #>IsDefineTest()
+        public void <#= type.EnumType #>_MinMaxTest()
         {
-            Assert.AreEqual(true, UniEnum.IsDefined<<#= type.EnumType #>>((<#= type #>)<#= 1 * type.Step #>));
-            Assert.AreEqual(true, UniEnum.IsDefined<<#= type.EnumType #>>((<#= type #>)<#= 2 * type.Step #>));
-            <#= type.IsSignOnly ? "//" : "" #>Assert.AreEqual(false, UniEnum.IsDefined<<#= type.EnumType #>>((<#= type #>)-1));
-            Assert.AreEqual(false, UniEnum.IsDefined<<#= type.EnumType #>>((<#= type #>)<#= 33 * type.Step #>));
+            Assert.AreEqual(<#= type.GetFullName(1) #>, UniEnum.GetMinValue<<#= type.EnumType #>>());
+            Assert.AreEqual(<#= type.GetFullName(32) #>, UniEnum.GetMaxValue<<#= type.EnumType #>>());
+        }
 
-            var type1 = (<#= type.EnumType #>)Enum.ToObject(typeof(<#= type.EnumType #>), <#= 1 * type.Step #>);
+        [Test]
+        public void <#= type.EnumType #>_IsDefineTest()
+        {
+            Assert.AreEqual(true, UniEnum.IsDefined<<#= type.EnumType #>>((<#= type #>)<#= type.GetValue(1) #>));
+            Assert.AreEqual(true, UniEnum.IsDefined<<#= type.EnumType #>>((<#= type #>)<#= type.GetValue(2) #>));
+            <#= type.IsSignOnly ? "//" : "" #>Assert.AreEqual(false, UniEnum.IsDefined<<#= type.EnumType #>>((<#= type #>)-1));
+            Assert.AreEqual(false, UniEnum.IsDefined<<#= type.EnumType #>>((<#= type #>)<#= type.GetValue(33) #>));
+
+            var type1 = (<#= type.EnumType #>)Enum.ToObject(typeof(<#= type.EnumType #>), <#= type.GetValue(1) #>);
             var unknown = (<#= type.EnumType #>)Enum.ToObject(typeof(<#= type.EnumType #>), -1);
             Assert.AreEqual(true, UniEnum.IsDefined(type1));
             Assert.AreEqual(false, UniEnum.IsDefined(unknown));
             
-            Assert.AreEqual(true, UniEnum.IsDefined<<#= type.EnumType #>>(<#= type.EnumType #>.Type1 | <#= type.EnumType #>.Type2));
-            
+            Assert.AreEqual(true, UniEnum.IsDefined<<#= type.EnumType #>>(<#= type.EnumType #>.Type1 | <#= type.EnumType #>.Type2));            
         }
 
         [Test] 
-        public void <#= type.EnumType #>TryParseTest() 
+        public void <#= type.EnumType #>_TryParseTest() 
         {
             <#= type.EnumType #> value;
             bool result;
             
-            result = UniEnum.TryParse("<#= 1 * type.Step #>", out value);
+            result = UniEnum.TryParse("<#= type.GetValue(1) #>", out value);
             Assert.AreEqual(true, result);
             Assert.AreEqual(<#= type.EnumType #>.Type1, value);
 
-            result = UniEnum.TryParse("+<#= 1 * type.Step #>", out value);
+            result = UniEnum.TryParse("+<#= type.GetValue(1) #>", out value);
             Assert.AreEqual(true, result);
             Assert.AreEqual(<#= type.EnumType #>.Type1, value);
 
-            result = UniEnum.TryParse("<#= 2 * type.Step #>", out value);
+            result = UniEnum.TryParse("<#= type.GetValue(2) #>", out value);
             Assert.AreEqual(true, result);
             Assert.AreEqual(<#= type.EnumType #>.Type2, value);
 
@@ -105,17 +111,24 @@ namespace UniEnumTests
         public readonly string Title;
         public readonly string EnumType;
         public readonly bool IsSignOnly;
+        public readonly int Start;
         public readonly int Step;
     
-        public TypeInfo(string typeName, bool isSignOnly, int step)
+        public TypeInfo(string typeName, bool isSignOnly, int start, int step)
         {
             TypeName = typeName;
+            Start = start;
             Step = step;
             Title = $"{Char.ToUpperInvariant(typeName[0])}{typeName.Substring(1)}" + (step == 1 ? string.Empty : step.ToString());
-            EnumType = $"{Title}Enum";
+            EnumType = $"{Title}Enum_S{start}_{step}";
             IsSignOnly = isSignOnly;
         }
 
+        public string GetName(int id) => $"Type{id}";
+
+        public string GetFullName(int id) => $"{EnumType}.{GetName(id)}";
+        
+        public int GetValue(int id) => Start + (id - 1) * Step;
 
         public override string ToString()
         {

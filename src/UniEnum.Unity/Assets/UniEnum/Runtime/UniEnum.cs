@@ -3,16 +3,22 @@ using System.Runtime.CompilerServices;
 
 namespace UniEnumUtils
 {
-    public static partial class UniEnum 
+    public static partial class UniEnum
     {
         public static ReadOnlyArray<string> GetNames<T>() where T : Enum 
             => NameCache<T>.ReadOnlyNames;
         
-        public static ReadOnlyArray<T> GetValues<T>() where T : struct, Enum 
+        public static ReadOnlyArray<T> GetValues<T>() where T : unmanaged, Enum 
             => ValueCache<T>.ReadOnlyValues;
 
-        public static int GetCount<T>() where T : struct, Enum
+        public static int GetCount<T>() where T : unmanaged, Enum
             => ValueCache<T>.ReadOnlyValues.Count;
+
+        public static T GetMinValue<T>() where T : unmanaged, Enum
+            => UnderlyingTypeInfo<T>.Operation.GetMinValue();
+
+        public static T GetMaxValue<T>() where T : unmanaged, Enum
+            => UnderlyingTypeInfo<T>.Operation.GetMaxValue();
 
         public static bool IsDefined<T>(T value) where T : unmanaged, Enum
             => UnderlyingTypeInfo<T>.Operation.IsDefined(value);

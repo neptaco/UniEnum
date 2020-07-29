@@ -39,7 +39,7 @@ namespace UniEnumUtils
         }
     }
 
-    static class ValueCache<T> where T : struct, Enum
+    static class ValueCache<T> where T : Enum
     {
         public static readonly T[] Values;
         public static readonly ReadOnlyArray<T> ReadOnlyValues;

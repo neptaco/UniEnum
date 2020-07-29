@@ -59,15 +59,16 @@ namespace UniEnumTests
         [Test]
         public void IsDefinedTest()
         {
-            Assert.IsTrue(UniEnum.IsDefined<Int2Enum>(4));
-            Assert.IsTrue(UniEnum.IsDefined<Int2Enum>(6));
-            Assert.IsFalse(UniEnum.IsDefined<Int2Enum>(5));
-            Assert.IsFalse(UniEnum.IsDefined<Int2Enum>(7));
+            Assert.IsTrue(UniEnum.IsDefined<Int2Enum_S1_2>(3));
+            Assert.IsTrue(UniEnum.IsDefined<Int2Enum_S1_2>(5));
+            
+            Assert.IsFalse(UniEnum.IsDefined<Int2Enum_S1_2>(4));
+            Assert.IsFalse(UniEnum.IsDefined<Int2Enum_S1_2>(6));
 
             CheckNotGCAlloc(() =>
             {
-                UniEnum.IsDefined<Int2Enum>(6);
-                UniEnum.IsDefined<Int2Enum>(5);
+                UniEnum.IsDefined<Int2Enum_S1_2>(6);
+                UniEnum.IsDefined<Int2Enum_S1_2>(5);
             });
         }
         

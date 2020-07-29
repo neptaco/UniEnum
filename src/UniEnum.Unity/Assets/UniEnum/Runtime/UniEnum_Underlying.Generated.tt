@@ -62,9 +62,10 @@ namespace UniEnumUtils
         private static (<#= type.TypeName #> min, <#= type.TypeName #> max, bool isContinuous) CheckValues()
         {
             bool continuous = true;
-            <#= type.TypeName #> min, max, previous;
-            min = max = previous = Unsafe.As<T, <#= type.TypeName #>>(default(T));
             var values = ValueCache<T>.Values;
+            var defaultValue = values.Length > 0 ? values[0] : default(T);
+            <#= type.TypeName #> min, max, previous;
+            min = max = previous = Unsafe.As<T, <#= type.TypeName #>>(defaultValue);
             for (int i = 0; i < values.Length; i++)
             {
                 var v = Unsafe.As<T, <#= type.TypeName #>>(values[i]);
@@ -72,11 +73,8 @@ namespace UniEnumUtils
                 if (i != 0 && previous != v - 1)
                     continuous = false;  
 
-                if (v < min)
-                    min = v;
-
-                if (v > max)
-                    max = v;
+                if (v < min) min = v;
+                if (v > max) max = v;
 
                 previous = v;
             }
@@ -96,6 +94,10 @@ namespace UniEnumUtils
                 return false;
             }
         
+            public T GetMinValue() => Unsafe.As<<#= type.TypeName #>, T>(MinValue);
+
+            public T GetMaxValue() => Unsafe.As<<#= type.TypeName #>, T>(MaxValue);
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public bool IsDefined(T value)
             {

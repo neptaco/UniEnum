@@ -98,9 +98,10 @@ namespace UniEnumUtils
         private static (sbyte min, sbyte max, bool isContinuous) CheckValues()
         {
             bool continuous = true;
-            sbyte min, max, previous;
-            min = max = previous = Unsafe.As<T, sbyte>(default(T));
             var values = ValueCache<T>.Values;
+            var defaultValue = values.Length > 0 ? values[0] : default(T);
+            sbyte min, max, previous;
+            min = max = previous = Unsafe.As<T, sbyte>(defaultValue);
             for (int i = 0; i < values.Length; i++)
             {
                 var v = Unsafe.As<T, sbyte>(values[i]);
@@ -108,11 +109,8 @@ namespace UniEnumUtils
                 if (i != 0 && previous != v - 1)
                     continuous = false;  
 
-                if (v < min)
-                    min = v;
-
-                if (v > max)
-                    max = v;
+                if (v < min) min = v;
+                if (v > max) max = v;
 
                 previous = v;
             }
@@ -132,6 +130,10 @@ namespace UniEnumUtils
                 return false;
             }
         
+            public T GetMinValue() => Unsafe.As<sbyte, T>(MinValue);
+
+            public T GetMaxValue() => Unsafe.As<sbyte, T>(MaxValue);
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public bool IsDefined(T value)
             {
@@ -193,9 +195,10 @@ namespace UniEnumUtils
         private static (byte min, byte max, bool isContinuous) CheckValues()
         {
             bool continuous = true;
-            byte min, max, previous;
-            min = max = previous = Unsafe.As<T, byte>(default(T));
             var values = ValueCache<T>.Values;
+            var defaultValue = values.Length > 0 ? values[0] : default(T);
+            byte min, max, previous;
+            min = max = previous = Unsafe.As<T, byte>(defaultValue);
             for (int i = 0; i < values.Length; i++)
             {
                 var v = Unsafe.As<T, byte>(values[i]);
@@ -203,11 +206,8 @@ namespace UniEnumUtils
                 if (i != 0 && previous != v - 1)
                     continuous = false;  
 
-                if (v < min)
-                    min = v;
-
-                if (v > max)
-                    max = v;
+                if (v < min) min = v;
+                if (v > max) max = v;
 
                 previous = v;
             }
@@ -227,6 +227,10 @@ namespace UniEnumUtils
                 return false;
             }
         
+            public T GetMinValue() => Unsafe.As<byte, T>(MinValue);
+
+            public T GetMaxValue() => Unsafe.As<byte, T>(MaxValue);
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public bool IsDefined(T value)
             {
@@ -288,9 +292,10 @@ namespace UniEnumUtils
         private static (short min, short max, bool isContinuous) CheckValues()
         {
             bool continuous = true;
-            short min, max, previous;
-            min = max = previous = Unsafe.As<T, short>(default(T));
             var values = ValueCache<T>.Values;
+            var defaultValue = values.Length > 0 ? values[0] : default(T);
+            short min, max, previous;
+            min = max = previous = Unsafe.As<T, short>(defaultValue);
             for (int i = 0; i < values.Length; i++)
             {
                 var v = Unsafe.As<T, short>(values[i]);
@@ -298,11 +303,8 @@ namespace UniEnumUtils
                 if (i != 0 && previous != v - 1)
                     continuous = false;  
 
-                if (v < min)
-                    min = v;
-
-                if (v > max)
-                    max = v;
+                if (v < min) min = v;
+                if (v > max) max = v;
 
                 previous = v;
             }
@@ -322,6 +324,10 @@ namespace UniEnumUtils
                 return false;
             }
         
+            public T GetMinValue() => Unsafe.As<short, T>(MinValue);
+
+            public T GetMaxValue() => Unsafe.As<short, T>(MaxValue);
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public bool IsDefined(T value)
             {
@@ -383,9 +389,10 @@ namespace UniEnumUtils
         private static (ushort min, ushort max, bool isContinuous) CheckValues()
         {
             bool continuous = true;
-            ushort min, max, previous;
-            min = max = previous = Unsafe.As<T, ushort>(default(T));
             var values = ValueCache<T>.Values;
+            var defaultValue = values.Length > 0 ? values[0] : default(T);
+            ushort min, max, previous;
+            min = max = previous = Unsafe.As<T, ushort>(defaultValue);
             for (int i = 0; i < values.Length; i++)
             {
                 var v = Unsafe.As<T, ushort>(values[i]);
@@ -393,11 +400,8 @@ namespace UniEnumUtils
                 if (i != 0 && previous != v - 1)
                     continuous = false;  
 
-                if (v < min)
-                    min = v;
-
-                if (v > max)
-                    max = v;
+                if (v < min) min = v;
+                if (v > max) max = v;
 
                 previous = v;
             }
@@ -417,6 +421,10 @@ namespace UniEnumUtils
                 return false;
             }
         
+            public T GetMinValue() => Unsafe.As<ushort, T>(MinValue);
+
+            public T GetMaxValue() => Unsafe.As<ushort, T>(MaxValue);
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public bool IsDefined(T value)
             {
@@ -478,9 +486,10 @@ namespace UniEnumUtils
         private static (int min, int max, bool isContinuous) CheckValues()
         {
             bool continuous = true;
-            int min, max, previous;
-            min = max = previous = Unsafe.As<T, int>(default(T));
             var values = ValueCache<T>.Values;
+            var defaultValue = values.Length > 0 ? values[0] : default(T);
+            int min, max, previous;
+            min = max = previous = Unsafe.As<T, int>(defaultValue);
             for (int i = 0; i < values.Length; i++)
             {
                 var v = Unsafe.As<T, int>(values[i]);
@@ -488,11 +497,8 @@ namespace UniEnumUtils
                 if (i != 0 && previous != v - 1)
                     continuous = false;  
 
-                if (v < min)
-                    min = v;
-
-                if (v > max)
-                    max = v;
+                if (v < min) min = v;
+                if (v > max) max = v;
 
                 previous = v;
             }
@@ -512,6 +518,10 @@ namespace UniEnumUtils
                 return false;
             }
         
+            public T GetMinValue() => Unsafe.As<int, T>(MinValue);
+
+            public T GetMaxValue() => Unsafe.As<int, T>(MaxValue);
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public bool IsDefined(T value)
             {
@@ -573,9 +583,10 @@ namespace UniEnumUtils
         private static (uint min, uint max, bool isContinuous) CheckValues()
         {
             bool continuous = true;
-            uint min, max, previous;
-            min = max = previous = Unsafe.As<T, uint>(default(T));
             var values = ValueCache<T>.Values;
+            var defaultValue = values.Length > 0 ? values[0] : default(T);
+            uint min, max, previous;
+            min = max = previous = Unsafe.As<T, uint>(defaultValue);
             for (int i = 0; i < values.Length; i++)
             {
                 var v = Unsafe.As<T, uint>(values[i]);
@@ -583,11 +594,8 @@ namespace UniEnumUtils
                 if (i != 0 && previous != v - 1)
                     continuous = false;  
 
-                if (v < min)
-                    min = v;
-
-                if (v > max)
-                    max = v;
+                if (v < min) min = v;
+                if (v > max) max = v;
 
                 previous = v;
             }
@@ -607,6 +615,10 @@ namespace UniEnumUtils
                 return false;
             }
         
+            public T GetMinValue() => Unsafe.As<uint, T>(MinValue);
+
+            public T GetMaxValue() => Unsafe.As<uint, T>(MaxValue);
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public bool IsDefined(T value)
             {
@@ -668,9 +680,10 @@ namespace UniEnumUtils
         private static (long min, long max, bool isContinuous) CheckValues()
         {
             bool continuous = true;
-            long min, max, previous;
-            min = max = previous = Unsafe.As<T, long>(default(T));
             var values = ValueCache<T>.Values;
+            var defaultValue = values.Length > 0 ? values[0] : default(T);
+            long min, max, previous;
+            min = max = previous = Unsafe.As<T, long>(defaultValue);
             for (int i = 0; i < values.Length; i++)
             {
                 var v = Unsafe.As<T, long>(values[i]);
@@ -678,11 +691,8 @@ namespace UniEnumUtils
                 if (i != 0 && previous != v - 1)
                     continuous = false;  
 
-                if (v < min)
-                    min = v;
-
-                if (v > max)
-                    max = v;
+                if (v < min) min = v;
+                if (v > max) max = v;
 
                 previous = v;
             }
@@ -702,6 +712,10 @@ namespace UniEnumUtils
                 return false;
             }
         
+            public T GetMinValue() => Unsafe.As<long, T>(MinValue);
+
+            public T GetMaxValue() => Unsafe.As<long, T>(MaxValue);
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public bool IsDefined(T value)
             {
@@ -763,9 +777,10 @@ namespace UniEnumUtils
         private static (ulong min, ulong max, bool isContinuous) CheckValues()
         {
             bool continuous = true;
-            ulong min, max, previous;
-            min = max = previous = Unsafe.As<T, ulong>(default(T));
             var values = ValueCache<T>.Values;
+            var defaultValue = values.Length > 0 ? values[0] : default(T);
+            ulong min, max, previous;
+            min = max = previous = Unsafe.As<T, ulong>(defaultValue);
             for (int i = 0; i < values.Length; i++)
             {
                 var v = Unsafe.As<T, ulong>(values[i]);
@@ -773,11 +788,8 @@ namespace UniEnumUtils
                 if (i != 0 && previous != v - 1)
                     continuous = false;  
 
-                if (v < min)
-                    min = v;
-
-                if (v > max)
-                    max = v;
+                if (v < min) min = v;
+                if (v > max) max = v;
 
                 previous = v;
             }
@@ -797,6 +809,10 @@ namespace UniEnumUtils
                 return false;
             }
         
+            public T GetMinValue() => Unsafe.As<ulong, T>(MinValue);
+
+            public T GetMaxValue() => Unsafe.As<ulong, T>(MaxValue);
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public bool IsDefined(T value)
             {
