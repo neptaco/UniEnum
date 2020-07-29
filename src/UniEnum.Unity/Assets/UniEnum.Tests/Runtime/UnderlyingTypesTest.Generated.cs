@@ -18,6 +18,18 @@ namespace UniEnumTests
             Assert.AreEqual(SbyteEnum_S1_1.Type32, UniEnum.GetMaxValue<SbyteEnum_S1_1>());
         }
 
+
+        [Test]
+        public void SbyteEnum_S1_1_GetNameTest()
+        {
+            Assert.AreEqual("Type1", UniEnum.GetName<SbyteEnum_S1_1>(SbyteEnum_S1_1.Type1));
+            Assert.AreEqual("Type2", UniEnum.GetName<SbyteEnum_S1_1>(SbyteEnum_S1_1.Type2));
+            Assert.AreEqual("Type32", UniEnum.GetName<SbyteEnum_S1_1>(SbyteEnum_S1_1.Type32));
+
+            var typeNotFound = (SbyteEnum_S1_1)Enum.ToObject(typeof(SbyteEnum_S1_1), 99999); 
+            Assert.AreEqual(null, UniEnum.GetName<SbyteEnum_S1_1>(typeNotFound));
+        }
+
         [Test]
         public void SbyteEnum_S1_1_IsDefineTest()
         {
@@ -89,6 +101,18 @@ namespace UniEnumTests
         {
             Assert.AreEqual(ByteEnum_S1_1.Type1, UniEnum.GetMinValue<ByteEnum_S1_1>());
             Assert.AreEqual(ByteEnum_S1_1.Type32, UniEnum.GetMaxValue<ByteEnum_S1_1>());
+        }
+
+
+        [Test]
+        public void ByteEnum_S1_1_GetNameTest()
+        {
+            Assert.AreEqual("Type1", UniEnum.GetName<ByteEnum_S1_1>(ByteEnum_S1_1.Type1));
+            Assert.AreEqual("Type2", UniEnum.GetName<ByteEnum_S1_1>(ByteEnum_S1_1.Type2));
+            Assert.AreEqual("Type32", UniEnum.GetName<ByteEnum_S1_1>(ByteEnum_S1_1.Type32));
+
+            var typeNotFound = (ByteEnum_S1_1)Enum.ToObject(typeof(ByteEnum_S1_1), 99999); 
+            Assert.AreEqual(null, UniEnum.GetName<ByteEnum_S1_1>(typeNotFound));
         }
 
         [Test]
@@ -165,6 +189,17 @@ namespace UniEnumTests
         }
 
         [Test]
+        public void ShortEnum_S1_1_GetNameTest()
+        {
+            Assert.AreEqual("Type1", UniEnum.GetName<ShortEnum_S1_1>(ShortEnum_S1_1.Type1));
+            Assert.AreEqual("Type2", UniEnum.GetName<ShortEnum_S1_1>(ShortEnum_S1_1.Type2));
+            Assert.AreEqual("Type32", UniEnum.GetName<ShortEnum_S1_1>(ShortEnum_S1_1.Type32));
+
+            var typeNotFound = (ShortEnum_S1_1)Enum.ToObject(typeof(ShortEnum_S1_1), 99999); 
+            Assert.AreEqual(null, UniEnum.GetName<ShortEnum_S1_1>(typeNotFound));
+        }
+
+        [Test]
         public void ShortEnum_S1_1_IsDefineTest()
         {
             Assert.AreEqual(true, UniEnum.IsDefined<ShortEnum_S1_1>((short)1));
@@ -235,6 +270,18 @@ namespace UniEnumTests
         {
             Assert.AreEqual(UshortEnum_S1_1.Type1, UniEnum.GetMinValue<UshortEnum_S1_1>());
             Assert.AreEqual(UshortEnum_S1_1.Type32, UniEnum.GetMaxValue<UshortEnum_S1_1>());
+        }
+
+
+        [Test]
+        public void UshortEnum_S1_1_GetNameTest()
+        {
+            Assert.AreEqual("Type1", UniEnum.GetName<UshortEnum_S1_1>(UshortEnum_S1_1.Type1));
+            Assert.AreEqual("Type2", UniEnum.GetName<UshortEnum_S1_1>(UshortEnum_S1_1.Type2));
+            Assert.AreEqual("Type32", UniEnum.GetName<UshortEnum_S1_1>(UshortEnum_S1_1.Type32));
+
+            var typeNotFound = (UshortEnum_S1_1)Enum.ToObject(typeof(UshortEnum_S1_1), 99999); 
+            Assert.AreEqual(null, UniEnum.GetName<UshortEnum_S1_1>(typeNotFound));
         }
 
         [Test]
@@ -310,6 +357,18 @@ namespace UniEnumTests
             Assert.AreEqual(IntEnum_S1_1.Type32, UniEnum.GetMaxValue<IntEnum_S1_1>());
         }
 
+
+        [Test]
+        public void IntEnum_S1_1_GetNameTest()
+        {
+            Assert.AreEqual("Type1", UniEnum.GetName<IntEnum_S1_1>(IntEnum_S1_1.Type1));
+            Assert.AreEqual("Type2", UniEnum.GetName<IntEnum_S1_1>(IntEnum_S1_1.Type2));
+            Assert.AreEqual("Type32", UniEnum.GetName<IntEnum_S1_1>(IntEnum_S1_1.Type32));
+
+            var typeNotFound = (IntEnum_S1_1)Enum.ToObject(typeof(IntEnum_S1_1), 99999); 
+            Assert.AreEqual(null, UniEnum.GetName<IntEnum_S1_1>(typeNotFound));
+        }
+
         [Test]
         public void IntEnum_S1_1_IsDefineTest()
         {
@@ -381,6 +440,18 @@ namespace UniEnumTests
         {
             Assert.AreEqual(Int2Enum_S1_2.Type1, UniEnum.GetMinValue<Int2Enum_S1_2>());
             Assert.AreEqual(Int2Enum_S1_2.Type32, UniEnum.GetMaxValue<Int2Enum_S1_2>());
+        }
+
+
+        [Test]
+        public void Int2Enum_S1_2_GetNameTest()
+        {
+            Assert.AreEqual("Type1", UniEnum.GetName<Int2Enum_S1_2>(Int2Enum_S1_2.Type1));
+            Assert.AreEqual("Type2", UniEnum.GetName<Int2Enum_S1_2>(Int2Enum_S1_2.Type2));
+            Assert.AreEqual("Type32", UniEnum.GetName<Int2Enum_S1_2>(Int2Enum_S1_2.Type32));
+
+            var typeNotFound = (Int2Enum_S1_2)Enum.ToObject(typeof(Int2Enum_S1_2), 99999); 
+            Assert.AreEqual(null, UniEnum.GetName<Int2Enum_S1_2>(typeNotFound));
         }
 
         [Test]
@@ -456,6 +527,18 @@ namespace UniEnumTests
             Assert.AreEqual(UintEnum_S1_1.Type32, UniEnum.GetMaxValue<UintEnum_S1_1>());
         }
 
+
+        [Test]
+        public void UintEnum_S1_1_GetNameTest()
+        {
+            Assert.AreEqual("Type1", UniEnum.GetName<UintEnum_S1_1>(UintEnum_S1_1.Type1));
+            Assert.AreEqual("Type2", UniEnum.GetName<UintEnum_S1_1>(UintEnum_S1_1.Type2));
+            Assert.AreEqual("Type32", UniEnum.GetName<UintEnum_S1_1>(UintEnum_S1_1.Type32));
+
+            var typeNotFound = (UintEnum_S1_1)Enum.ToObject(typeof(UintEnum_S1_1), 99999); 
+            Assert.AreEqual(null, UniEnum.GetName<UintEnum_S1_1>(typeNotFound));
+        }
+
         [Test]
         public void UintEnum_S1_1_IsDefineTest()
         {
@@ -529,6 +612,18 @@ namespace UniEnumTests
             Assert.AreEqual(LongEnum_S1_1.Type32, UniEnum.GetMaxValue<LongEnum_S1_1>());
         }
 
+
+        [Test]
+        public void LongEnum_S1_1_GetNameTest()
+        {
+            Assert.AreEqual("Type1", UniEnum.GetName<LongEnum_S1_1>(LongEnum_S1_1.Type1));
+            Assert.AreEqual("Type2", UniEnum.GetName<LongEnum_S1_1>(LongEnum_S1_1.Type2));
+            Assert.AreEqual("Type32", UniEnum.GetName<LongEnum_S1_1>(LongEnum_S1_1.Type32));
+
+            var typeNotFound = (LongEnum_S1_1)Enum.ToObject(typeof(LongEnum_S1_1), 99999); 
+            Assert.AreEqual(null, UniEnum.GetName<LongEnum_S1_1>(typeNotFound));
+        }
+
         [Test]
         public void LongEnum_S1_1_IsDefineTest()
         {
@@ -600,6 +695,18 @@ namespace UniEnumTests
         {
             Assert.AreEqual(UlongEnum_S1_1.Type1, UniEnum.GetMinValue<UlongEnum_S1_1>());
             Assert.AreEqual(UlongEnum_S1_1.Type32, UniEnum.GetMaxValue<UlongEnum_S1_1>());
+        }
+
+
+        [Test]
+        public void UlongEnum_S1_1_GetNameTest()
+        {
+            Assert.AreEqual("Type1", UniEnum.GetName<UlongEnum_S1_1>(UlongEnum_S1_1.Type1));
+            Assert.AreEqual("Type2", UniEnum.GetName<UlongEnum_S1_1>(UlongEnum_S1_1.Type2));
+            Assert.AreEqual("Type32", UniEnum.GetName<UlongEnum_S1_1>(UlongEnum_S1_1.Type32));
+
+            var typeNotFound = (UlongEnum_S1_1)Enum.ToObject(typeof(UlongEnum_S1_1), 99999); 
+            Assert.AreEqual(null, UniEnum.GetName<UlongEnum_S1_1>(typeNotFound));
         }
 
         [Test]

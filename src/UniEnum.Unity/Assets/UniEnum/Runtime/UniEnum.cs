@@ -5,6 +5,9 @@ namespace UniEnumUtils
 {
     public static partial class UniEnum
     {
+        public static string GetName<T>(T v) where T : unmanaged, Enum
+            => UnderlyingTypeInfo<T>.Operation.GetName(v); 
+        
         public static ReadOnlyArray<string> GetNames<T>() where T : Enum 
             => NameCache<T>.ReadOnlyNames;
         

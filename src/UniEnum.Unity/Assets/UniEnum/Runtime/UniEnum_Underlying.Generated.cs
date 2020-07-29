@@ -140,11 +140,43 @@ namespace UniEnumUtils
                 return IsDefined(Unsafe.As<T, sbyte>(value));
             }
             
+            public abstract string GetName(T value);
+
             public abstract bool IsDefined(sbyte value);
         }
 
         private sealed class Continuous : Base
         {
+            private static ValueInfo<T>[] _valueInfos;
+
+            static Continuous()
+            {
+                _valueInfos = ValueInfoCache<T>.ValueInfos;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public bool TryGetValueInfo(T value, out ValueInfo<T> result)
+            {
+                var v = Unsafe.As<T, sbyte>(value);
+                var index = (uint)(v - MinValue);
+                if (index < _valueInfos.Length)
+                {   
+                    result = _valueInfos[index];
+                    return true;
+                }
+
+                result = default;
+                return false;
+            }
+
+            public override string GetName(T value)
+            {
+                if (TryGetValueInfo(value, out var info))
+                    return info.Name;
+
+                return null;
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public override bool IsDefined(sbyte value)
             {
@@ -161,6 +193,15 @@ namespace UniEnumUtils
                 _hashTable = new HashTable<sbyte, ValueInfo<T>>(
                     ValueInfoCache<T>.ValueInfos,
                     (in ValueInfo<T> info) => Unsafe.As<T, sbyte>(info.EnumValue));
+            }
+
+            public override string GetName(T value)
+            {
+                var v = Unsafe.As<T, sbyte>(value);
+                if (_hashTable.TryGetValue(v, out var info))
+                    return info.Name;
+
+                return null;
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -237,11 +278,43 @@ namespace UniEnumUtils
                 return IsDefined(Unsafe.As<T, byte>(value));
             }
             
+            public abstract string GetName(T value);
+
             public abstract bool IsDefined(byte value);
         }
 
         private sealed class Continuous : Base
         {
+            private static ValueInfo<T>[] _valueInfos;
+
+            static Continuous()
+            {
+                _valueInfos = ValueInfoCache<T>.ValueInfos;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public bool TryGetValueInfo(T value, out ValueInfo<T> result)
+            {
+                var v = Unsafe.As<T, byte>(value);
+                var index = (uint)(v - MinValue);
+                if (index < _valueInfos.Length)
+                {   
+                    result = _valueInfos[index];
+                    return true;
+                }
+
+                result = default;
+                return false;
+            }
+
+            public override string GetName(T value)
+            {
+                if (TryGetValueInfo(value, out var info))
+                    return info.Name;
+
+                return null;
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public override bool IsDefined(byte value)
             {
@@ -258,6 +331,15 @@ namespace UniEnumUtils
                 _hashTable = new HashTable<byte, ValueInfo<T>>(
                     ValueInfoCache<T>.ValueInfos,
                     (in ValueInfo<T> info) => Unsafe.As<T, byte>(info.EnumValue));
+            }
+
+            public override string GetName(T value)
+            {
+                var v = Unsafe.As<T, byte>(value);
+                if (_hashTable.TryGetValue(v, out var info))
+                    return info.Name;
+
+                return null;
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -334,11 +416,43 @@ namespace UniEnumUtils
                 return IsDefined(Unsafe.As<T, short>(value));
             }
             
+            public abstract string GetName(T value);
+
             public abstract bool IsDefined(short value);
         }
 
         private sealed class Continuous : Base
         {
+            private static ValueInfo<T>[] _valueInfos;
+
+            static Continuous()
+            {
+                _valueInfos = ValueInfoCache<T>.ValueInfos;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public bool TryGetValueInfo(T value, out ValueInfo<T> result)
+            {
+                var v = Unsafe.As<T, short>(value);
+                var index = (uint)(v - MinValue);
+                if (index < _valueInfos.Length)
+                {   
+                    result = _valueInfos[index];
+                    return true;
+                }
+
+                result = default;
+                return false;
+            }
+
+            public override string GetName(T value)
+            {
+                if (TryGetValueInfo(value, out var info))
+                    return info.Name;
+
+                return null;
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public override bool IsDefined(short value)
             {
@@ -355,6 +469,15 @@ namespace UniEnumUtils
                 _hashTable = new HashTable<short, ValueInfo<T>>(
                     ValueInfoCache<T>.ValueInfos,
                     (in ValueInfo<T> info) => Unsafe.As<T, short>(info.EnumValue));
+            }
+
+            public override string GetName(T value)
+            {
+                var v = Unsafe.As<T, short>(value);
+                if (_hashTable.TryGetValue(v, out var info))
+                    return info.Name;
+
+                return null;
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -431,11 +554,43 @@ namespace UniEnumUtils
                 return IsDefined(Unsafe.As<T, ushort>(value));
             }
             
+            public abstract string GetName(T value);
+
             public abstract bool IsDefined(ushort value);
         }
 
         private sealed class Continuous : Base
         {
+            private static ValueInfo<T>[] _valueInfos;
+
+            static Continuous()
+            {
+                _valueInfos = ValueInfoCache<T>.ValueInfos;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public bool TryGetValueInfo(T value, out ValueInfo<T> result)
+            {
+                var v = Unsafe.As<T, ushort>(value);
+                var index = (uint)(v - MinValue);
+                if (index < _valueInfos.Length)
+                {   
+                    result = _valueInfos[index];
+                    return true;
+                }
+
+                result = default;
+                return false;
+            }
+
+            public override string GetName(T value)
+            {
+                if (TryGetValueInfo(value, out var info))
+                    return info.Name;
+
+                return null;
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public override bool IsDefined(ushort value)
             {
@@ -452,6 +607,15 @@ namespace UniEnumUtils
                 _hashTable = new HashTable<ushort, ValueInfo<T>>(
                     ValueInfoCache<T>.ValueInfos,
                     (in ValueInfo<T> info) => Unsafe.As<T, ushort>(info.EnumValue));
+            }
+
+            public override string GetName(T value)
+            {
+                var v = Unsafe.As<T, ushort>(value);
+                if (_hashTable.TryGetValue(v, out var info))
+                    return info.Name;
+
+                return null;
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -528,11 +692,43 @@ namespace UniEnumUtils
                 return IsDefined(Unsafe.As<T, int>(value));
             }
             
+            public abstract string GetName(T value);
+
             public abstract bool IsDefined(int value);
         }
 
         private sealed class Continuous : Base
         {
+            private static ValueInfo<T>[] _valueInfos;
+
+            static Continuous()
+            {
+                _valueInfos = ValueInfoCache<T>.ValueInfos;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public bool TryGetValueInfo(T value, out ValueInfo<T> result)
+            {
+                var v = Unsafe.As<T, int>(value);
+                var index = (uint)(v - MinValue);
+                if (index < _valueInfos.Length)
+                {   
+                    result = _valueInfos[index];
+                    return true;
+                }
+
+                result = default;
+                return false;
+            }
+
+            public override string GetName(T value)
+            {
+                if (TryGetValueInfo(value, out var info))
+                    return info.Name;
+
+                return null;
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public override bool IsDefined(int value)
             {
@@ -549,6 +745,15 @@ namespace UniEnumUtils
                 _hashTable = new Int32HashTable<ValueInfo<T>>(
                     ValueInfoCache<T>.ValueInfos,
                     (in ValueInfo<T> info) => Unsafe.As<T, int>(info.EnumValue));
+            }
+
+            public override string GetName(T value)
+            {
+                var v = Unsafe.As<T, int>(value);
+                if (_hashTable.TryGetValue(v, out var info))
+                    return info.Name;
+
+                return null;
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -625,11 +830,43 @@ namespace UniEnumUtils
                 return IsDefined(Unsafe.As<T, uint>(value));
             }
             
+            public abstract string GetName(T value);
+
             public abstract bool IsDefined(uint value);
         }
 
         private sealed class Continuous : Base
         {
+            private static ValueInfo<T>[] _valueInfos;
+
+            static Continuous()
+            {
+                _valueInfos = ValueInfoCache<T>.ValueInfos;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public bool TryGetValueInfo(T value, out ValueInfo<T> result)
+            {
+                var v = Unsafe.As<T, uint>(value);
+                var index = (uint)(v - MinValue);
+                if (index < _valueInfos.Length)
+                {   
+                    result = _valueInfos[index];
+                    return true;
+                }
+
+                result = default;
+                return false;
+            }
+
+            public override string GetName(T value)
+            {
+                if (TryGetValueInfo(value, out var info))
+                    return info.Name;
+
+                return null;
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public override bool IsDefined(uint value)
             {
@@ -646,6 +883,15 @@ namespace UniEnumUtils
                 _hashTable = new HashTable<uint, ValueInfo<T>>(
                     ValueInfoCache<T>.ValueInfos,
                     (in ValueInfo<T> info) => Unsafe.As<T, uint>(info.EnumValue));
+            }
+
+            public override string GetName(T value)
+            {
+                var v = Unsafe.As<T, uint>(value);
+                if (_hashTable.TryGetValue(v, out var info))
+                    return info.Name;
+
+                return null;
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -722,11 +968,43 @@ namespace UniEnumUtils
                 return IsDefined(Unsafe.As<T, long>(value));
             }
             
+            public abstract string GetName(T value);
+
             public abstract bool IsDefined(long value);
         }
 
         private sealed class Continuous : Base
         {
+            private static ValueInfo<T>[] _valueInfos;
+
+            static Continuous()
+            {
+                _valueInfos = ValueInfoCache<T>.ValueInfos;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public bool TryGetValueInfo(T value, out ValueInfo<T> result)
+            {
+                var v = Unsafe.As<T, long>(value);
+                var index = (uint)(v - MinValue);
+                if (index < _valueInfos.Length)
+                {   
+                    result = _valueInfos[index];
+                    return true;
+                }
+
+                result = default;
+                return false;
+            }
+
+            public override string GetName(T value)
+            {
+                if (TryGetValueInfo(value, out var info))
+                    return info.Name;
+
+                return null;
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public override bool IsDefined(long value)
             {
@@ -743,6 +1021,15 @@ namespace UniEnumUtils
                 _hashTable = new HashTable<long, ValueInfo<T>>(
                     ValueInfoCache<T>.ValueInfos,
                     (in ValueInfo<T> info) => Unsafe.As<T, long>(info.EnumValue));
+            }
+
+            public override string GetName(T value)
+            {
+                var v = Unsafe.As<T, long>(value);
+                if (_hashTable.TryGetValue(v, out var info))
+                    return info.Name;
+
+                return null;
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -819,11 +1106,43 @@ namespace UniEnumUtils
                 return IsDefined(Unsafe.As<T, ulong>(value));
             }
             
+            public abstract string GetName(T value);
+
             public abstract bool IsDefined(ulong value);
         }
 
         private sealed class Continuous : Base
         {
+            private static ValueInfo<T>[] _valueInfos;
+
+            static Continuous()
+            {
+                _valueInfos = ValueInfoCache<T>.ValueInfos;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public bool TryGetValueInfo(T value, out ValueInfo<T> result)
+            {
+                var v = Unsafe.As<T, ulong>(value);
+                var index = (uint)(v - MinValue);
+                if (index < _valueInfos.Length)
+                {   
+                    result = _valueInfos[index];
+                    return true;
+                }
+
+                result = default;
+                return false;
+            }
+
+            public override string GetName(T value)
+            {
+                if (TryGetValueInfo(value, out var info))
+                    return info.Name;
+
+                return null;
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public override bool IsDefined(ulong value)
             {
@@ -840,6 +1159,15 @@ namespace UniEnumUtils
                 _hashTable = new HashTable<ulong, ValueInfo<T>>(
                     ValueInfoCache<T>.ValueInfos,
                     (in ValueInfo<T> info) => Unsafe.As<T, ulong>(info.EnumValue));
+            }
+
+            public override string GetName(T value)
+            {
+                var v = Unsafe.As<T, ulong>(value);
+                if (_hashTable.TryGetValue(v, out var info))
+                    return info.Name;
+
+                return null;
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

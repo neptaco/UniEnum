@@ -42,6 +42,18 @@ namespace UniEnumTests
             Assert.AreEqual(<#= type.GetFullName(32) #>, UniEnum.GetMaxValue<<#= type.EnumType #>>());
         }
 
+
+        [Test]
+        public void <#= type.EnumType #>_GetNameTest()
+        {
+            Assert.AreEqual("<#= type.GetName(1) #>", UniEnum.GetName<<#= type.EnumType #>>(<#= type.GetFullName(1) #>));
+            Assert.AreEqual("<#= type.GetName(2) #>", UniEnum.GetName<<#= type.EnumType #>>(<#= type.GetFullName(2) #>));
+            Assert.AreEqual("<#= type.GetName(32) #>", UniEnum.GetName<<#= type.EnumType #>>(<#= type.GetFullName(32) #>));
+
+            var typeNotFound = (<#= type.EnumType #>)Enum.ToObject(typeof(<#= type.EnumType #>), 99999); 
+            Assert.AreEqual(null, UniEnum.GetName<<#= type.EnumType #>>(typeNotFound));
+        }
+
         [Test]
         public void <#= type.EnumType #>_IsDefineTest()
         {

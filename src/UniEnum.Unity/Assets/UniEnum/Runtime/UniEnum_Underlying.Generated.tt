@@ -104,11 +104,43 @@ namespace UniEnumUtils
                 return IsDefined(Unsafe.As<T, <#= type.TypeName #>>(value));
             }
             
+            public abstract string GetName(T value);
+
             public abstract bool IsDefined(<#= type.TypeName #> value);
         }
 
         private sealed class Continuous : Base
         {
+            private static ValueInfo<T>[] _valueInfos;
+
+            static Continuous()
+            {
+                _valueInfos = ValueInfoCache<T>.ValueInfos;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public bool TryGetValueInfo(T value, out ValueInfo<T> result)
+            {
+                var v = Unsafe.As<T, <#= type.TypeName #>>(value);
+                var index = (uint)(v - MinValue);
+                if (index < _valueInfos.Length)
+                {   
+                    result = _valueInfos[index];
+                    return true;
+                }
+
+                result = default;
+                return false;
+            }
+
+            public override string GetName(T value)
+            {
+                if (TryGetValueInfo(value, out var info))
+                    return info.Name;
+
+                return null;
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public override bool IsDefined(<#= type.TypeName #> value)
             {
@@ -125,6 +157,15 @@ namespace UniEnumUtils
                 _hashTable = new <#= type.HashTableClass #>(
                     ValueInfoCache<T>.ValueInfos,
                     (in ValueInfo<T> info) => Unsafe.As<T, <#= type.TypeName #>>(info.EnumValue));
+            }
+
+            public override string GetName(T value)
+            {
+                var v = Unsafe.As<T, <#= type.TypeName #>>(value);
+                if (_hashTable.TryGetValue(v, out var info))
+                    return info.Name;
+
+                return null;
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
