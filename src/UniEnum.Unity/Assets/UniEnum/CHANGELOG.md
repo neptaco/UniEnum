@@ -4,11 +4,20 @@
 
 ### Added
 
+- Add new methods
+  - string UniEnum.GetName<T>
+  - T UniEnum.GetMinValue<T>
+  - T UniEnum.GetMaxValue<T>
+
 ### Change
 
 ### Deprecated
 
 ### Removed
+
+- ConstantsGenerator is removed.
+  see [neptaco/UnityConstantsGenerator](https://github.com/neptaco/UnityConstantsGenerator)
+
 
 ### Fixed
 

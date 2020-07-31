@@ -3,7 +3,6 @@
 Provides enumeration values utilities for Unity.
 
 - Fast utilitiy methods for enum. (GetValue, GetNames, IsDefined, TryParase etc..)
-- Automate the creation of Unity's constant values as enumerations. (Scene, Tag, Layer, SortingLayer)
 
 ## Install
 
@@ -35,27 +34,10 @@ Download .unitypackage from [Release Page](https://github.com/neptaco/UniEnum/re
 |Enum.TryParse(typeof(EnumType))|UniEnum.TryParse\<EnumType>(v)|
 
 
+*Note*
+
 [^1]: `UniEnum.IsDefined` is case sensitive.
 
-## Generate Unity constant values
-
-Open `ProjectSettings -> UniEnum` and set the generation target.
-
-|Target|Generated classes|
-|----|-------|
-|Scene|SceneId<br/>SceneName<br/>ScenePath|
-|Layer|LayerId<br/>LayerMaskValue|
-|SortingLayer|SortingLyaerId<br/>SortingLayerName|
-|Tag|TagName|
-
-
-### How to manually update scene variables on batch build
-
-Call the following method.
-
-```
-UnityConstantValuesGenerator.UpdateSceneValues(EditorBuildSettingScenes[] scenes)
-```
 
 
 ### License
