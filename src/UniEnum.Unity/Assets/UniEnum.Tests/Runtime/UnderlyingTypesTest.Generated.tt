@@ -4,7 +4,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#
-    var typeInfos = new[]
+    var typeInfos = new　[]
     {
         new TypeInfo("sbyte", false, 1, 1),
         new TypeInfo("byte", true, 1, 1),

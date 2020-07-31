@@ -3,7 +3,7 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".cs" #>
 <#
-var types = new TypeInfo[] {
+var types = new [] {
     new TypeInfo(typeof(sbyte), false),
     new TypeInfo(typeof(byte), false),
     new TypeInfo(typeof(short), false),
