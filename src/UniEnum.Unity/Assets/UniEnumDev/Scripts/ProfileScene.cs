@@ -8,7 +8,6 @@ namespace UniEnumDev.Scripts
     {
         private void Awake()
         {
-            Debug.Log(ScenePath.ProfileScene);
         }
     }
 
