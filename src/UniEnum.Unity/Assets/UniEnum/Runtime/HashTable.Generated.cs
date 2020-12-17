@@ -43,7 +43,7 @@ namespace UniEnumUtils
             }
             else
             {
-　　　　　　　　　　　// Duplicates will not be checked.
+                // Duplicates will not be checked.
 
                 var newArray = new Entry[entries.Length + 1];
                 Array.Copy(entries, newArray, entries.Length);
@@ -141,7 +141,7 @@ namespace UniEnumUtils
             }
             else
             {
-　　　　　　　　　　　// Duplicates will not be checked.
+                // Duplicates will not be checked.
 
                 var newArray = new Entry[entries.Length + 1];
                 Array.Copy(entries, newArray, entries.Length);
@@ -239,7 +239,7 @@ namespace UniEnumUtils
             }
             else
             {
-　　　　　　　　　　　// Duplicates will not be checked.
+                // Duplicates will not be checked.
 
                 var newArray = new Entry[entries.Length + 1];
                 Array.Copy(entries, newArray, entries.Length);
@@ -337,7 +337,7 @@ namespace UniEnumUtils
             }
             else
             {
-　　　　　　　　　　　// Duplicates will not be checked.
+                // Duplicates will not be checked.
 
                 var newArray = new Entry[entries.Length + 1];
                 Array.Copy(entries, newArray, entries.Length);
