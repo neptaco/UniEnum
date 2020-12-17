@@ -38,7 +38,7 @@ Download .unitypackage from [Release Page](https://github.com/neptaco/UniEnum/re
 
 [^1]: `UniEnum.IsDefined` is case sensitive.
 
-### Benchmark
+## Benchmark
 
 ``` ini
 
@@ -53,7 +53,7 @@ WarmupCount=3
 
 ```
 
-#### GetValues
+### GetValues
 
 |          Method |        Mean |       Error |    StdDev |      Median |     Ratio |  RatioSD |  Gen 0 | Gen 1 | Gen 2 | Allocated |
 |---------------- |------------:|------------:|----------:|------------:|----------:|---------:|-------:|------:|------:|----------:|
@@ -61,7 +61,7 @@ WarmupCount=3
 | FastEnum_Values |   0.1494 ns |   1.3796 ns | 0.0756 ns |   0.1634 ns |      2.44 |     2.54 |      - |     - |     - |         - |
 |     Enum_Values | 767.8288 ns | 109.8056 ns | 6.0188 ns | 765.2773 ns | 10,559.26 | 7,092.53 | 0.0706 |     - |     - |     224 B |
 
-#### TryParse
+### TryParse
 
 |                              Method |        Mean |        Error |     StdDev |  Ratio | RatioSD | Gen 0 | Gen 1 | Gen 2 | Allocated |
 |------------------------------------ |------------:|-------------:|-----------:|-------:|--------:|------:|------:|------:|----------:|
@@ -73,7 +73,6 @@ WarmupCount=3
 |      FastEnum_TryParse_IgnoreCase_1 |    17.61 ns |     8.040 ns |   0.441 ns |   1.05 |    0.06 |     - |     - |     - |         - |
 |    FastEnum_TryParse_IgnoreCase_500 | 4,821.54 ns | 2,057.946 ns | 112.803 ns | 288.58 |    9.61 |     - |     - |     - |         - |
 
-#### IsDefined
 
 |                           Method |     Mean |    Error |    StdDev | Ratio | RatioSD | Gen 0 | Gen 1 | Gen 2 | Allocated |
 |--------------------------------- |---------:|---------:|----------:|------:|--------:|------:|------:|------:|----------:|
