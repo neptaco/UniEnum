@@ -8,7 +8,7 @@
 
     <ItemGroup>
       <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
-      <PackageReference Include="FastEnum" Version="1.5.3" />
+      <PackageReference Include="FastEnum" Version="1.6.0" />
     </ItemGroup>
 
     <ItemGroup>
