@@ -1,5 +1,7 @@
 # UniEnum
 
+![.NET](https://github.com/neptaco/UniEnum/workflows/.NET/badge.svg)
+
 Provides enumeration values utilities for Unity.
 
 - Fast utilitiy methods for enum. (GetValue, GetNames, IsDefined, TryParase etc..)
