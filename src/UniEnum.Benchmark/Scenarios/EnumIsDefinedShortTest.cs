@@ -11,8 +11,8 @@ namespace UniEnumBenchmark
         [GlobalSetup]
         public void Setup()
         {
-            UniEnum.IsDefined<ShortEnum1>(1000);
-            FastEnum.IsDefined<ShortEnum1>(1000);
+            UniEnum.IsDefined<ShortEnum1>((short)1000);
+            FastEnum.IsDefined<ShortEnum1>((short)1000);
         }
         
         [Benchmark(Baseline = true)]

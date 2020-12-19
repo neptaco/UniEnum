@@ -62,22 +62,33 @@ Intel Core i5-8259U CPU 2.30GHz (Coffee Lake), 1 CPU, 8 logical and 4 physical c
 
 ### TryParse
 
-|                              Method |        Mean |        Error |     StdDev |  Ratio | RatioSD | Gen 0 | Gen 1 | Gen 2 | Allocated |
-|------------------------------------ |------------:|-------------:|-----------:|-------:|--------:|------:|------:|------:|----------:|
-|    UniEnum_TryParse_CaseSensitive_1 |    16.72 ns |    11.874 ns |   0.651 ns |   1.00 |    0.00 |     - |     - |     - |         - |
-|   FastEnum_TryParse_CaseSensitive_1 |    21.33 ns |    11.664 ns |   0.639 ns |   1.28 |    0.09 |     - |     - |     - |         - |
-|  UniEnum_TryParse_CaseSensitive_500 |    17.02 ns |     4.245 ns |   0.233 ns |   1.02 |    0.05 |     - |     - |     - |         - |
-| FastEnum_TryParse_CaseSensitive_500 |    21.79 ns |    15.696 ns |   0.860 ns |   1.31 |    0.08 |     - |     - |     - |         - |
-|       UniEnum_TryParse_IgnoreCase_1 |    24.22 ns |     7.067 ns |   0.387 ns |   1.45 |    0.03 |     - |     - |     - |         - |
-|      FastEnum_TryParse_IgnoreCase_1 |    17.61 ns |     8.040 ns |   0.441 ns |   1.05 |    0.06 |     - |     - |     - |         - |
-|    FastEnum_TryParse_IgnoreCase_500 | 4,821.54 ns | 2,057.946 ns | 112.803 ns | 288.58 |    9.61 |     - |     - |     - |         - |
+|                              Method |        Mean |      Error |    StdDev |  Ratio | RatioSD | Gen 0 | Gen 1 | Gen 2 | Allocated |
+|------------------------------------ |------------:|-----------:|----------:|-------:|--------:|------:|------:|------:|----------:|
+|    UniEnum_TryParse_CaseSensitive_1 |    16.01 ns |  11.717 ns |  0.642 ns |   1.00 |    0.00 |     - |     - |     - |         - |
+|   FastEnum_TryParse_CaseSensitive_1 |    20.38 ns |   4.270 ns |  0.234 ns |   1.27 |    0.05 |     - |     - |     - |         - |
+|  UniEnum_TryParse_CaseSensitive_500 |    16.21 ns |   4.119 ns |  0.226 ns |   1.01 |    0.05 |     - |     - |     - |         - |
+| FastEnum_TryParse_CaseSensitive_500 |    20.65 ns |   2.056 ns |  0.113 ns |   1.29 |    0.05 |     - |     - |     - |         - |
+|       UniEnum_TryParse_IgnoreCase_1 |    21.31 ns |  12.460 ns |  0.683 ns |   1.33 |    0.02 |     - |     - |     - |         - |
+|      FastEnum_TryParse_IgnoreCase_1 |    16.40 ns |   5.825 ns |  0.319 ns |   1.03 |    0.06 |     - |     - |     - |         - |
+|     UniEnum_TryParse_IgnoreCase_500 |    23.99 ns |  10.884 ns |  0.597 ns |   1.50 |    0.02 |     - |     - |     - |         - |
+|    FastEnum_TryParse_IgnoreCase_500 | 4,363.10 ns | 972.177 ns | 53.288 ns | 272.76 |   11.38 |     - |     - |     - |         - |
 
+### IsDefined
 
-|                           Method |     Mean |    Error |    StdDev | Ratio | RatioSD | Gen 0 | Gen 1 | Gen 2 | Allocated |
-|--------------------------------- |---------:|---------:|----------:|------:|--------:|------:|------:|------:|----------:|
-|  UniEnum_Discontinuous_IsDefined | 2.246 ns | 1.510 ns | 0.0828 ns |  1.00 |    0.00 |     - |     - |     - |         - |
-| FastEnum_Discontinuous_IsDefined | 4.375 ns | 1.105 ns | 0.0606 ns |  1.95 |    0.05 |     - |     - |     - |         - |
+|                           Method |      Mean |     Error |    StdDev | Ratio | RatioSD | Gen 0 | Gen 1 | Gen 2 | Allocated |
+|--------------------------------- |----------:|----------:|----------:|------:|--------:|------:|------:|------:|----------:|
+|     UniEnum_Continuous_IsDefined | 0.8545 ns | 0.1330 ns | 0.0073 ns |  1.00 |    0.00 |     - |     - |     - |         - |
+|    FastEnum_Continuous_IsDefined | 3.5935 ns | 0.7328 ns | 0.0402 ns |  4.21 |    0.08 |     - |     - |     - |         - |
 
+|                           Method |     Mean |     Error |    StdDev | Ratio | RatioSD | Gen 0 | Gen 1 | Gen 2 | Allocated |
+|--------------------------------- |---------:|----------:|----------:|------:|--------:|------:|------:|------:|----------:|
+|  UniEnum_Discontinuous_IsDefined | 2.001 ns | 0.1944 ns | 0.0107 ns |  1.00 |    0.00 |     - |     - |     - |         - |
+| FastEnum_Discontinuous_IsDefined | 4.030 ns | 0.6492 ns | 0.0356 ns |  2.01 |    0.02 |     - |     - |     - |         - |
+
+|                   Method |      Mean |     Error |    StdDev | Ratio | RatioSD | Gen 0 | Gen 1 | Gen 2 | Allocated |
+|------------------------- |----------:|----------:|----------:|------:|--------:|------:|------:|------:|----------:|
+|  UniEnum_Short_IsDefined | 0.9304 ns | 0.4986 ns | 0.0273 ns |  1.00 |    0.00 |     - |     - |     - |         - |
+| FastEnum_Short_IsDefined | 3.2503 ns | 0.5247 ns | 0.0288 ns |  3.50 |    0.12 |     - |     - |     - |         - |
 
 ### License
 
