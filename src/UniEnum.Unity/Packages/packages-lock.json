@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.cysharp.runtimeunittesttoolkit": {
+      "version": "https://github.com/neptaco/RuntimeUnitTestToolkit.git?path=RuntimeUnitTestToolkit/Assets/RuntimeUnitTestToolkit#add_asmdef_for_editor",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5a2a0d2f526e71320836dd04239b6cb0d543f7c9"
+    },
     "com.unity.collab-proxy": {
       "version": "1.2.16",
       "depth": 0,

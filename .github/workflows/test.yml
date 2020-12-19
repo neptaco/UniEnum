@@ -1,0 +1,49 @@
+name: Test
+
+on: [push]
+
+jobs:
+  test-unity:
+    strategy:
+      matrix:
+        unity: [2019.4.4f1]
+        include:
+          - unity: 2019.4.4f1
+            license: ULF_2019
+    
+    runs-on: ubuntu-latest
+    container:
+      # https://hub.docker.com/r/gableroux/unity3d/tags  
+      image: gableroux/unity3d:${{ matrix.unity }}-linux-il2cpp
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # Activate license
+      - run: echo -n "$UNITY_LICENSE" >> unity.ulf
+        env:
+          UNITY_LICENSE: ${{ secrets[matrix.license] }}
+      - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile unity.ulf || exit 0
+      - run: rm -f unity.ulf
+
+      - name: Run EditMode Test
+        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile \
+          -runTests \
+          -testPlatform PlayMode \
+          -testsResultFile result.xml
+        working-directory: src/UniEnum.Unity
+
+      #- name: Build UnitTest Player
+      #  run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile \
+      #    -executeMethod UnitTestBuilder.BuildUnitTest \
+      #    /headless /ScriptBackend IL2CPP \
+      #    /BuildTarget StandaloneLinux64
+      #  working-directory: src/UniEnum.Unity
+
+      #- name: Run UnitTest
+      #  run: ./RuntimeUnitTestToolkit/bin/UnitTest/StandaloneLinux64_IL2CPP/test
+
+
+
+
+      

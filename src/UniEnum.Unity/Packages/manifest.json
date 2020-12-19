@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.cysharp.runtimeunittesttoolkit": "https://github.com/neptaco/RuntimeUnitTestToolkit.git?path=RuntimeUnitTestToolkit/Assets/RuntimeUnitTestToolkit#add_asmdef_for_editor",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "2.0.5",
     "com.unity.ide.vscode": "1.2.3",
@@ -45,6 +46,7 @@
       "name": "package.openupm.com",
       "url": "https://package.openupm.com",
       "scopes": [
+        "com.cysharp.runtimeunittesttoolkit",
         "com.openupm",
         "com.xtaltools.unity-t4-patch"
       ]
