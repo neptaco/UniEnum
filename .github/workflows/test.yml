@@ -6,7 +6,7 @@ jobs:
   dotnet-test:
 
     runs-on: ubuntu-latest
-    envs:
+    env:
       DOTNET_CLI_TELEMETRY_OPTOUT: true
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
       NUGET_XMLDOC_MODE: skip
