@@ -1,7 +1,7 @@
 # UniEnum
 
 [![openupm](https://img.shields.io/npm/v/com.xtaltools.unienum?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.xtaltools.unienum/)
-![.NET](https://github.com/neptaco/UniEnum/workflows/.NET/badge.svg)
+![Test](https://github.com/neptaco/UniEnum/workflows/Test/badge.svg)
 
 Provides enumeration values utilities for Unity.
 

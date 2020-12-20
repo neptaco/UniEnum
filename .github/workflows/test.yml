@@ -3,7 +3,28 @@ name: Test
 on: [push]
 
 jobs:
-  test-unity:
+  dotnet-test:
+
+    runs-on: ubuntu-latest
+    envs:
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+      NUGET_XMLDOC_MODE: skip
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.101
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+
+  unity-test:
     strategy:
       matrix:
         unity: [2019.4.4f1]
@@ -42,8 +63,3 @@ jobs:
 
       #- name: Run UnitTest
       #  run: ./RuntimeUnitTestToolkit/bin/UnitTest/StandaloneLinux64_IL2CPP/test
-
-
-
-
-      
