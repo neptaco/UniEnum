@@ -7,6 +7,9 @@ Provides enumeration values utilities for Unity.
 
 - Fast utilitiy methods for enum. (GetValue, GetNames, IsDefined, TryParase etc..)
 
+<!-- START doctoc -->
+<!-- END doctoc -->
+
 ## Install
 
 1. Install from UnityPackage from Release Page
