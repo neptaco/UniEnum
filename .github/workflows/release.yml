@@ -9,7 +9,7 @@ env:
   DOTNET_PACKAGE_NAME: UniEnum
   DOTNET_PROJECT_NAME: UniEnum.NetCore
   DOTNET_PROJECT_PATH: src/UniEnum.NetCore
-  DOTNET_TEST_PROJECT_PATH: src/UniEnum.Tests
+  DOTNET_TEST_PROJECT_PATH: src/UniEnum.NetCore.Tests
   DOTNET_VERSION: 5.0.x
 
   UNITY_PACKAGE_NAME: UniEnum.Unity
