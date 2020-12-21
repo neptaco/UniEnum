@@ -48,7 +48,7 @@ jobs:
       - run: rm -f unity.ulf
 
       - name: Run EditMode Test
-        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile \
+        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile
           -runTests
           -testPlatform PlayMode
           -testsResultFile result.xml
