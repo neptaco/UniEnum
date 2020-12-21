@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class PackageExporter
 {
@@ -44,6 +45,16 @@ public class PackageExporter
     {
         var packageJson = Path.Combine(PackageDir, "package.json");
         var packageInfo = JsonUtility.FromJson<PackageInfo>(File.ReadAllText(packageJson));
+
+        if (Application.isBatchMode)
+        {
+            var envVersion = Environment.GetEnvironmentVariable("UNITY_PACKAGE_VERSION");
+            if (envVersion != packageInfo.version)
+            {
+                Console.Error.WriteLine($"package version mismatched. env:{envVersion} package.json:{packageInfo.version}");
+                EditorApplication.Exit(1);
+            }
+        }
         return packageInfo.version;
     }
 
