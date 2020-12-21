@@ -74,7 +74,7 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: ${{ env.UNITY_PACKAGE_NAME }}.${{ env.GIT_TAG }}.unitypackage
-          path: ${{ env.UNITY_PACKAGE_PATH }}/${{ env.UNITY_PACKAGE_NAME }}.${{ env.GIT_TAG }}.unitypackage
+          path: ${{ env.UNITY_PACKAGE_PATH }}/Artifacts/UnityPackages/${{ env.UNITY_PACKAGE_NAME }}.${{ env.GIT_TAG }}.unitypackage
 
 
   create-release:
