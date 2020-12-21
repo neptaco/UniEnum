@@ -63,8 +63,8 @@ jobs:
 
       # Execute scripts: Export Package
       - name: Export unitypackage
-        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile \
-          -projectPath . \
+        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile
+          -projectPath .
           -executeMethod PackageExporter.Export
         working-directory: ${{ env.UNITY_PACKAGE_PATH }}
         env:

@@ -49,8 +49,8 @@ jobs:
 
       - name: Run EditMode Test
         run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile \
-          -runTests \
-          -testPlatform PlayMode \
+          -runTests
+          -testPlatform PlayMode
           -testsResultFile result.xml
         working-directory: src/UniEnum.Unity
 
