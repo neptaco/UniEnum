@@ -78,8 +78,7 @@ jobs:
 
 
   create-release:
-    #needs: [build-dotnet, build-unity]
-    needs: [build-dotnet]
+    needs: [build-dotnet, build-unity]
     runs-on: ubuntu-latest
     steps:
       # setup dotnet for nuget push
