@@ -73,8 +73,8 @@ jobs:
       # Store artifacts.
       - uses: actions/upload-artifact@v1
         with:
-          name: ${{ env.UNITY_PACKAGE_NAME }}.${{ env.GIT_TAG }}.unitypackage
-          path: ${{ env.UNITY_PACKAGE_PATH }}/Artifacts/UnityPackages/${{ env.UNITY_PACKAGE_NAME }}.${{ env.GIT_TAG }}.unitypackage
+          name: ${{ env.UNITY_PACKAGE_NAME }}-${{ env.GIT_TAG }}.unitypackage
+          path: ${{ env.UNITY_PACKAGE_PATH }}/Artifacts/UnityPackages/${{ env.UNITY_PACKAGE_NAME }}-${{ env.GIT_TAG }}.unitypackage
 
 
   create-release:
@@ -109,6 +109,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./${{ env.UNITY_PACKAGE_NAME }}.${{ env.GIT_TAG }}.unitypackage/${{ env.UNITY_PACKAGE_NAME }}.${{ env.GIT_TAG }}.unitypackage
-          asset_name: ${{ env.UNITY_PACKAGE_NAME }}.${{ env.GIT_TAG }}.unitypackage
+          asset_path: ./${{ env.UNITY_PACKAGE_NAME }}-${{ env.GIT_TAG }}.unitypackage/${{ env.UNITY_PACKAGE_NAME }}-${{ env.GIT_TAG }}.unitypackage
+          asset_name: ${{ env.UNITY_PACKAGE_NAME }}-${{ env.GIT_TAG }}.unitypackage
           asset_content_type: application/octet-stream
