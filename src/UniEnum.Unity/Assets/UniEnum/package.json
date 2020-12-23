@@ -1,6 +1,6 @@
 {
   "name": "com.xtaltools.unienum",
-  "version": "0.0.2",
+  "version": "1.0.0-preview.1",
   "displayName": "UniEnum",
   "description": "Enum Utilities for Unity",
   "unity": "2019.4",
