@@ -1,6 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <PackageId>UniEnum</PackageId>
+
+        <Title>UniEnum</Title>
+        <Description>Fast Enum Utiliities for .NET Core and Unity.</Description>
+        <AssemblyName>UniEnum</AssemblyName>
+        <PackageVersion>$(Version)</PackageVersion>
+        <Authors>neptaco</Authors>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/neptaco/UniEnum</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/neptaco/UniEnum</RepositoryUrl>
+        <PackageTags>enum;unity;</PackageTags>
+        <Copyright>Copyright (c) 2020 Atsuhito Machida</Copyright>
+        <RepositoryType>git</RepositoryType>
+
         <TargetFramework>netstandard2.1</TargetFramework>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>8.0</LangVersion>

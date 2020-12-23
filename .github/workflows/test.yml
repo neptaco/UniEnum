@@ -34,7 +34,7 @@ jobs:
     
     runs-on: ubuntu-latest
     container:
-      # https://hub.docker.com/r/gableroux/unity3d/tags  
+      # https://hub.docker.com/r/gableroux/unity3d/tags
       image: gableroux/unity3d:${{ matrix.unity }}-linux-il2cpp
 
     steps:
@@ -48,9 +48,9 @@ jobs:
       - run: rm -f unity.ulf
 
       - name: Run EditMode Test
-        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile \
-          -runTests \
-          -testPlatform PlayMode \
+        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile
+          -runTests
+          -testPlatform PlayMode
           -testsResultFile result.xml
         working-directory: src/UniEnum.Unity
 
