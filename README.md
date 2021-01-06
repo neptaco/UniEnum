@@ -40,6 +40,8 @@ Download .unitypackage from [Release Page](https://github.com/neptaco/UniEnum/re
 
 ## Enum Utility Methods
 
+[Api Documentation](https://neptaco.github.io/UniEnum/api/UniEnumUtils.UniEnum.html)
+
 |.NET|UniEnum|
 |----|-------|
 |Enum.GetNames(typeof(EnumType))|UniEnum.GetNames\<EnumType>()|
