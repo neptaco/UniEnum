@@ -33,10 +33,6 @@ jobs:
             license: ULF_2019
     
     runs-on: ubuntu-latest
-    container:
-      # https://hub.docker.com/r/gableroux/unity3d/tags
-      image: game-ci/docker:${{ matrix.unity }}-linux-il2cpp
-
     steps:
       - uses: actions/checkout@v2
         with:
@@ -45,7 +41,7 @@ jobs:
       # Cache
       - uses: actions/cache@v2
         with:
-          path: Library
+          path: src/UnitEnum.Unity/Library
           key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
             Library-
