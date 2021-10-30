@@ -50,7 +50,7 @@ jobs:
       - name: Run tests
         uses: game-ci/unity-test-runner@v2
         env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_LICENSE: ${{ secrets.ULF_2019 }}
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           projectPath: src/UniEnum.Unity
