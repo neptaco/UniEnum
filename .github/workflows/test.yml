@@ -35,7 +35,7 @@ jobs:
         unityVersion: [auto]
         include:
           - unityVersion: auto
-            license: ULF_2019
+            license: UNITY_LICENSE
     
     runs-on: ubuntu-latest
     steps:
