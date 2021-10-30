@@ -35,31 +35,26 @@ jobs:
     runs-on: ubuntu-latest
     container:
       # https://hub.docker.com/r/gableroux/unity3d/tags
-      image: gableroux/unity3d:${{ matrix.unity }}-linux-il2cpp
+      image: game-ci/docker:${{ matrix.unity }}-linux-il2cpp
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          lfs: true
 
-      # Activate license
-      - run: echo -n "$UNITY_LICENSE" >> unity.ulf
+      # Cache
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+
+      # Test
+      - name: Run tests
+        uses: game-ci/unity-test-runner@v2
         env:
-          UNITY_LICENSE: ${{ secrets[matrix.license] }}
-      - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile unity.ulf || exit 0
-      - run: rm -f unity.ulf
-
-      - name: Run EditMode Test
-        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile
-          -runTests
-          -testPlatform PlayMode
-          -testsResultFile result.xml
-        working-directory: src/UniEnum.Unity
-
-      #- name: Build UnitTest Player
-      #  run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile \
-      #    -executeMethod UnitTestBuilder.BuildUnitTest \
-      #    /headless /ScriptBackend IL2CPP \
-      #    /BuildTarget StandaloneLinux64
-      #  working-directory: src/UniEnum.Unity
-
-      #- name: Run UnitTest
-      #  run: ./RuntimeUnitTestToolkit/bin/UnitTest/StandaloneLinux64_IL2CPP/test
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          projectPath: src/UniEnum.Unity
