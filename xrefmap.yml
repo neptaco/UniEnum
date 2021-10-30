@@ -1,0 +1,398 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: UniEnumUtils
+  name: UniEnumUtils
+  href: api/UniEnumUtils.html
+  commentId: N:UniEnumUtils
+  fullName: UniEnumUtils
+  nameWithType: UniEnumUtils
+- uid: UniEnumUtils.ReadOnlyArray`1
+  name: ReadOnlyArray<T>
+  href: api/UniEnumUtils.ReadOnlyArray-1.html
+  commentId: T:UniEnumUtils.ReadOnlyArray`1
+  name.vb: ReadOnlyArray(Of T)
+  fullName: UniEnumUtils.ReadOnlyArray<T>
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T)
+  nameWithType: ReadOnlyArray<T>
+  nameWithType.vb: ReadOnlyArray(Of T)
+- uid: UniEnumUtils.ReadOnlyArray`1.#ctor(`0[])
+  name: ReadOnlyArray(T[])
+  href: api/UniEnumUtils.ReadOnlyArray-1.html#UniEnumUtils_ReadOnlyArray_1__ctor__0___
+  commentId: M:UniEnumUtils.ReadOnlyArray`1.#ctor(`0[])
+  name.vb: ReadOnlyArray(T())
+  fullName: UniEnumUtils.ReadOnlyArray<T>.ReadOnlyArray(T[])
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).ReadOnlyArray(T())
+  nameWithType: ReadOnlyArray<T>.ReadOnlyArray(T[])
+  nameWithType.vb: ReadOnlyArray(Of T).ReadOnlyArray(T())
+- uid: UniEnumUtils.ReadOnlyArray`1.#ctor*
+  name: ReadOnlyArray
+  href: api/UniEnumUtils.ReadOnlyArray-1.html#UniEnumUtils_ReadOnlyArray_1__ctor_
+  commentId: Overload:UniEnumUtils.ReadOnlyArray`1.#ctor
+  isSpec: "True"
+  fullName: UniEnumUtils.ReadOnlyArray<T>.ReadOnlyArray
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).ReadOnlyArray
+  nameWithType: ReadOnlyArray<T>.ReadOnlyArray
+  nameWithType.vb: ReadOnlyArray(Of T).ReadOnlyArray
+- uid: UniEnumUtils.ReadOnlyArray`1.Count
+  name: Count
+  href: api/UniEnumUtils.ReadOnlyArray-1.html#UniEnumUtils_ReadOnlyArray_1_Count
+  commentId: P:UniEnumUtils.ReadOnlyArray`1.Count
+  fullName: UniEnumUtils.ReadOnlyArray<T>.Count
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).Count
+  nameWithType: ReadOnlyArray<T>.Count
+  nameWithType.vb: ReadOnlyArray(Of T).Count
+- uid: UniEnumUtils.ReadOnlyArray`1.Count*
+  name: Count
+  href: api/UniEnumUtils.ReadOnlyArray-1.html#UniEnumUtils_ReadOnlyArray_1_Count_
+  commentId: Overload:UniEnumUtils.ReadOnlyArray`1.Count
+  isSpec: "True"
+  fullName: UniEnumUtils.ReadOnlyArray<T>.Count
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).Count
+  nameWithType: ReadOnlyArray<T>.Count
+  nameWithType.vb: ReadOnlyArray(Of T).Count
+- uid: UniEnumUtils.ReadOnlyArray`1.Enumerator
+  name: ReadOnlyArray<T>.Enumerator
+  href: api/UniEnumUtils.ReadOnlyArray-1.Enumerator.html
+  commentId: T:UniEnumUtils.ReadOnlyArray`1.Enumerator
+  name.vb: ReadOnlyArray(Of T).Enumerator
+  fullName: UniEnumUtils.ReadOnlyArray<T>.Enumerator
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).Enumerator
+  nameWithType: ReadOnlyArray<T>.Enumerator
+  nameWithType.vb: ReadOnlyArray(Of T).Enumerator
+- uid: UniEnumUtils.ReadOnlyArray`1.Enumerator.#ctor(`0[])
+  name: Enumerator(T[])
+  href: api/UniEnumUtils.ReadOnlyArray-1.Enumerator.html#UniEnumUtils_ReadOnlyArray_1_Enumerator__ctor__0___
+  commentId: M:UniEnumUtils.ReadOnlyArray`1.Enumerator.#ctor(`0[])
+  name.vb: Enumerator(T())
+  fullName: UniEnumUtils.ReadOnlyArray<T>.Enumerator.Enumerator(T[])
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).Enumerator.Enumerator(T())
+  nameWithType: ReadOnlyArray<T>.Enumerator.Enumerator(T[])
+  nameWithType.vb: ReadOnlyArray(Of T).Enumerator.Enumerator(T())
+- uid: UniEnumUtils.ReadOnlyArray`1.Enumerator.#ctor*
+  name: Enumerator
+  href: api/UniEnumUtils.ReadOnlyArray-1.Enumerator.html#UniEnumUtils_ReadOnlyArray_1_Enumerator__ctor_
+  commentId: Overload:UniEnumUtils.ReadOnlyArray`1.Enumerator.#ctor
+  isSpec: "True"
+  fullName: UniEnumUtils.ReadOnlyArray<T>.Enumerator.Enumerator
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).Enumerator.Enumerator
+  nameWithType: ReadOnlyArray<T>.Enumerator.Enumerator
+  nameWithType.vb: ReadOnlyArray(Of T).Enumerator.Enumerator
+- uid: UniEnumUtils.ReadOnlyArray`1.Enumerator.Current
+  name: Current
+  href: api/UniEnumUtils.ReadOnlyArray-1.Enumerator.html#UniEnumUtils_ReadOnlyArray_1_Enumerator_Current
+  commentId: P:UniEnumUtils.ReadOnlyArray`1.Enumerator.Current
+  fullName: UniEnumUtils.ReadOnlyArray<T>.Enumerator.Current
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).Enumerator.Current
+  nameWithType: ReadOnlyArray<T>.Enumerator.Current
+  nameWithType.vb: ReadOnlyArray(Of T).Enumerator.Current
+- uid: UniEnumUtils.ReadOnlyArray`1.Enumerator.Current*
+  name: Current
+  href: api/UniEnumUtils.ReadOnlyArray-1.Enumerator.html#UniEnumUtils_ReadOnlyArray_1_Enumerator_Current_
+  commentId: Overload:UniEnumUtils.ReadOnlyArray`1.Enumerator.Current
+  isSpec: "True"
+  fullName: UniEnumUtils.ReadOnlyArray<T>.Enumerator.Current
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).Enumerator.Current
+  nameWithType: ReadOnlyArray<T>.Enumerator.Current
+  nameWithType.vb: ReadOnlyArray(Of T).Enumerator.Current
+- uid: UniEnumUtils.ReadOnlyArray`1.Enumerator.Dispose
+  name: Dispose()
+  href: api/UniEnumUtils.ReadOnlyArray-1.Enumerator.html#UniEnumUtils_ReadOnlyArray_1_Enumerator_Dispose
+  commentId: M:UniEnumUtils.ReadOnlyArray`1.Enumerator.Dispose
+  fullName: UniEnumUtils.ReadOnlyArray<T>.Enumerator.Dispose()
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).Enumerator.Dispose()
+  nameWithType: ReadOnlyArray<T>.Enumerator.Dispose()
+  nameWithType.vb: ReadOnlyArray(Of T).Enumerator.Dispose()
+- uid: UniEnumUtils.ReadOnlyArray`1.Enumerator.Dispose*
+  name: Dispose
+  href: api/UniEnumUtils.ReadOnlyArray-1.Enumerator.html#UniEnumUtils_ReadOnlyArray_1_Enumerator_Dispose_
+  commentId: Overload:UniEnumUtils.ReadOnlyArray`1.Enumerator.Dispose
+  isSpec: "True"
+  fullName: UniEnumUtils.ReadOnlyArray<T>.Enumerator.Dispose
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).Enumerator.Dispose
+  nameWithType: ReadOnlyArray<T>.Enumerator.Dispose
+  nameWithType.vb: ReadOnlyArray(Of T).Enumerator.Dispose
+- uid: UniEnumUtils.ReadOnlyArray`1.Enumerator.MoveNext
+  name: MoveNext()
+  href: api/UniEnumUtils.ReadOnlyArray-1.Enumerator.html#UniEnumUtils_ReadOnlyArray_1_Enumerator_MoveNext
+  commentId: M:UniEnumUtils.ReadOnlyArray`1.Enumerator.MoveNext
+  fullName: UniEnumUtils.ReadOnlyArray<T>.Enumerator.MoveNext()
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).Enumerator.MoveNext()
+  nameWithType: ReadOnlyArray<T>.Enumerator.MoveNext()
+  nameWithType.vb: ReadOnlyArray(Of T).Enumerator.MoveNext()
+- uid: UniEnumUtils.ReadOnlyArray`1.Enumerator.MoveNext*
+  name: MoveNext
+  href: api/UniEnumUtils.ReadOnlyArray-1.Enumerator.html#UniEnumUtils_ReadOnlyArray_1_Enumerator_MoveNext_
+  commentId: Overload:UniEnumUtils.ReadOnlyArray`1.Enumerator.MoveNext
+  isSpec: "True"
+  fullName: UniEnumUtils.ReadOnlyArray<T>.Enumerator.MoveNext
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).Enumerator.MoveNext
+  nameWithType: ReadOnlyArray<T>.Enumerator.MoveNext
+  nameWithType.vb: ReadOnlyArray(Of T).Enumerator.MoveNext
+- uid: UniEnumUtils.ReadOnlyArray`1.Enumerator.Reset
+  name: Reset()
+  href: api/UniEnumUtils.ReadOnlyArray-1.Enumerator.html#UniEnumUtils_ReadOnlyArray_1_Enumerator_Reset
+  commentId: M:UniEnumUtils.ReadOnlyArray`1.Enumerator.Reset
+  fullName: UniEnumUtils.ReadOnlyArray<T>.Enumerator.Reset()
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).Enumerator.Reset()
+  nameWithType: ReadOnlyArray<T>.Enumerator.Reset()
+  nameWithType.vb: ReadOnlyArray(Of T).Enumerator.Reset()
+- uid: UniEnumUtils.ReadOnlyArray`1.Enumerator.Reset*
+  name: Reset
+  href: api/UniEnumUtils.ReadOnlyArray-1.Enumerator.html#UniEnumUtils_ReadOnlyArray_1_Enumerator_Reset_
+  commentId: Overload:UniEnumUtils.ReadOnlyArray`1.Enumerator.Reset
+  isSpec: "True"
+  fullName: UniEnumUtils.ReadOnlyArray<T>.Enumerator.Reset
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).Enumerator.Reset
+  nameWithType: ReadOnlyArray<T>.Enumerator.Reset
+  nameWithType.vb: ReadOnlyArray(Of T).Enumerator.Reset
+- uid: UniEnumUtils.ReadOnlyArray`1.GetEnumerator
+  name: GetEnumerator()
+  href: api/UniEnumUtils.ReadOnlyArray-1.html#UniEnumUtils_ReadOnlyArray_1_GetEnumerator
+  commentId: M:UniEnumUtils.ReadOnlyArray`1.GetEnumerator
+  fullName: UniEnumUtils.ReadOnlyArray<T>.GetEnumerator()
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).GetEnumerator()
+  nameWithType: ReadOnlyArray<T>.GetEnumerator()
+  nameWithType.vb: ReadOnlyArray(Of T).GetEnumerator()
+- uid: UniEnumUtils.ReadOnlyArray`1.GetEnumerator*
+  name: GetEnumerator
+  href: api/UniEnumUtils.ReadOnlyArray-1.html#UniEnumUtils_ReadOnlyArray_1_GetEnumerator_
+  commentId: Overload:UniEnumUtils.ReadOnlyArray`1.GetEnumerator
+  isSpec: "True"
+  fullName: UniEnumUtils.ReadOnlyArray<T>.GetEnumerator
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).GetEnumerator
+  nameWithType: ReadOnlyArray<T>.GetEnumerator
+  nameWithType.vb: ReadOnlyArray(Of T).GetEnumerator
+- uid: UniEnumUtils.ReadOnlyArray`1.Item(System.Int32)
+  name: Item[Int32]
+  href: api/UniEnumUtils.ReadOnlyArray-1.html#UniEnumUtils_ReadOnlyArray_1_Item_System_Int32_
+  commentId: P:UniEnumUtils.ReadOnlyArray`1.Item(System.Int32)
+  name.vb: Item(Int32)
+  fullName: UniEnumUtils.ReadOnlyArray<T>.Item[System.Int32]
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).Item(System.Int32)
+  nameWithType: ReadOnlyArray<T>.Item[Int32]
+  nameWithType.vb: ReadOnlyArray(Of T).Item(Int32)
+- uid: UniEnumUtils.ReadOnlyArray`1.Item*
+  name: Item
+  href: api/UniEnumUtils.ReadOnlyArray-1.html#UniEnumUtils_ReadOnlyArray_1_Item_
+  commentId: Overload:UniEnumUtils.ReadOnlyArray`1.Item
+  isSpec: "True"
+  fullName: UniEnumUtils.ReadOnlyArray<T>.Item
+  fullName.vb: UniEnumUtils.ReadOnlyArray(Of T).Item
+  nameWithType: ReadOnlyArray<T>.Item
+  nameWithType.vb: ReadOnlyArray(Of T).Item
+- uid: UniEnumUtils.UniEnum
+  name: UniEnum
+  href: api/UniEnumUtils.UniEnum.html
+  commentId: T:UniEnumUtils.UniEnum
+  fullName: UniEnumUtils.UniEnum
+  nameWithType: UniEnum
+- uid: UniEnumUtils.UniEnum.GetCount*
+  name: GetCount
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_GetCount_
+  commentId: Overload:UniEnumUtils.UniEnum.GetCount
+  isSpec: "True"
+  fullName: UniEnumUtils.UniEnum.GetCount
+  nameWithType: UniEnum.GetCount
+- uid: UniEnumUtils.UniEnum.GetCount``1
+  name: GetCount<T>()
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_GetCount__1
+  commentId: M:UniEnumUtils.UniEnum.GetCount``1
+  name.vb: GetCount(Of T)()
+  fullName: UniEnumUtils.UniEnum.GetCount<T>()
+  fullName.vb: UniEnumUtils.UniEnum.GetCount(Of T)()
+  nameWithType: UniEnum.GetCount<T>()
+  nameWithType.vb: UniEnum.GetCount(Of T)()
+- uid: UniEnumUtils.UniEnum.GetMaxValue*
+  name: GetMaxValue
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_GetMaxValue_
+  commentId: Overload:UniEnumUtils.UniEnum.GetMaxValue
+  isSpec: "True"
+  fullName: UniEnumUtils.UniEnum.GetMaxValue
+  nameWithType: UniEnum.GetMaxValue
+- uid: UniEnumUtils.UniEnum.GetMaxValue``1
+  name: GetMaxValue<T>()
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_GetMaxValue__1
+  commentId: M:UniEnumUtils.UniEnum.GetMaxValue``1
+  name.vb: GetMaxValue(Of T)()
+  fullName: UniEnumUtils.UniEnum.GetMaxValue<T>()
+  fullName.vb: UniEnumUtils.UniEnum.GetMaxValue(Of T)()
+  nameWithType: UniEnum.GetMaxValue<T>()
+  nameWithType.vb: UniEnum.GetMaxValue(Of T)()
+- uid: UniEnumUtils.UniEnum.GetMinValue*
+  name: GetMinValue
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_GetMinValue_
+  commentId: Overload:UniEnumUtils.UniEnum.GetMinValue
+  isSpec: "True"
+  fullName: UniEnumUtils.UniEnum.GetMinValue
+  nameWithType: UniEnum.GetMinValue
+- uid: UniEnumUtils.UniEnum.GetMinValue``1
+  name: GetMinValue<T>()
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_GetMinValue__1
+  commentId: M:UniEnumUtils.UniEnum.GetMinValue``1
+  name.vb: GetMinValue(Of T)()
+  fullName: UniEnumUtils.UniEnum.GetMinValue<T>()
+  fullName.vb: UniEnumUtils.UniEnum.GetMinValue(Of T)()
+  nameWithType: UniEnum.GetMinValue<T>()
+  nameWithType.vb: UniEnum.GetMinValue(Of T)()
+- uid: UniEnumUtils.UniEnum.GetName*
+  name: GetName
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_GetName_
+  commentId: Overload:UniEnumUtils.UniEnum.GetName
+  isSpec: "True"
+  fullName: UniEnumUtils.UniEnum.GetName
+  nameWithType: UniEnum.GetName
+- uid: UniEnumUtils.UniEnum.GetName``1(``0)
+  name: GetName<T>(T)
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_GetName__1___0_
+  commentId: M:UniEnumUtils.UniEnum.GetName``1(``0)
+  name.vb: GetName(Of T)(T)
+  fullName: UniEnumUtils.UniEnum.GetName<T>(T)
+  fullName.vb: UniEnumUtils.UniEnum.GetName(Of T)(T)
+  nameWithType: UniEnum.GetName<T>(T)
+  nameWithType.vb: UniEnum.GetName(Of T)(T)
+- uid: UniEnumUtils.UniEnum.GetNames*
+  name: GetNames
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_GetNames_
+  commentId: Overload:UniEnumUtils.UniEnum.GetNames
+  isSpec: "True"
+  fullName: UniEnumUtils.UniEnum.GetNames
+  nameWithType: UniEnum.GetNames
+- uid: UniEnumUtils.UniEnum.GetNames``1
+  name: GetNames<T>()
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_GetNames__1
+  commentId: M:UniEnumUtils.UniEnum.GetNames``1
+  name.vb: GetNames(Of T)()
+  fullName: UniEnumUtils.UniEnum.GetNames<T>()
+  fullName.vb: UniEnumUtils.UniEnum.GetNames(Of T)()
+  nameWithType: UniEnum.GetNames<T>()
+  nameWithType.vb: UniEnum.GetNames(Of T)()
+- uid: UniEnumUtils.UniEnum.GetValues*
+  name: GetValues
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_GetValues_
+  commentId: Overload:UniEnumUtils.UniEnum.GetValues
+  isSpec: "True"
+  fullName: UniEnumUtils.UniEnum.GetValues
+  nameWithType: UniEnum.GetValues
+- uid: UniEnumUtils.UniEnum.GetValues``1
+  name: GetValues<T>()
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_GetValues__1
+  commentId: M:UniEnumUtils.UniEnum.GetValues``1
+  name.vb: GetValues(Of T)()
+  fullName: UniEnumUtils.UniEnum.GetValues<T>()
+  fullName.vb: UniEnumUtils.UniEnum.GetValues(Of T)()
+  nameWithType: UniEnum.GetValues<T>()
+  nameWithType.vb: UniEnum.GetValues(Of T)()
+- uid: UniEnumUtils.UniEnum.IsDefined*
+  name: IsDefined
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_IsDefined_
+  commentId: Overload:UniEnumUtils.UniEnum.IsDefined
+  isSpec: "True"
+  fullName: UniEnumUtils.UniEnum.IsDefined
+  nameWithType: UniEnum.IsDefined
+- uid: UniEnumUtils.UniEnum.IsDefined``1(``0)
+  name: IsDefined<T>(T)
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_IsDefined__1___0_
+  commentId: M:UniEnumUtils.UniEnum.IsDefined``1(``0)
+  name.vb: IsDefined(Of T)(T)
+  fullName: UniEnumUtils.UniEnum.IsDefined<T>(T)
+  fullName.vb: UniEnumUtils.UniEnum.IsDefined(Of T)(T)
+  nameWithType: UniEnum.IsDefined<T>(T)
+  nameWithType.vb: UniEnum.IsDefined(Of T)(T)
+- uid: UniEnumUtils.UniEnum.IsDefined``1(System.Byte)
+  name: IsDefined<T>(Byte)
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_IsDefined__1_System_Byte_
+  commentId: M:UniEnumUtils.UniEnum.IsDefined``1(System.Byte)
+  name.vb: IsDefined(Of T)(Byte)
+  fullName: UniEnumUtils.UniEnum.IsDefined<T>(System.Byte)
+  fullName.vb: UniEnumUtils.UniEnum.IsDefined(Of T)(System.Byte)
+  nameWithType: UniEnum.IsDefined<T>(Byte)
+  nameWithType.vb: UniEnum.IsDefined(Of T)(Byte)
+- uid: UniEnumUtils.UniEnum.IsDefined``1(System.Int16)
+  name: IsDefined<T>(Int16)
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_IsDefined__1_System_Int16_
+  commentId: M:UniEnumUtils.UniEnum.IsDefined``1(System.Int16)
+  name.vb: IsDefined(Of T)(Int16)
+  fullName: UniEnumUtils.UniEnum.IsDefined<T>(System.Int16)
+  fullName.vb: UniEnumUtils.UniEnum.IsDefined(Of T)(System.Int16)
+  nameWithType: UniEnum.IsDefined<T>(Int16)
+  nameWithType.vb: UniEnum.IsDefined(Of T)(Int16)
+- uid: UniEnumUtils.UniEnum.IsDefined``1(System.Int32)
+  name: IsDefined<T>(Int32)
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_IsDefined__1_System_Int32_
+  commentId: M:UniEnumUtils.UniEnum.IsDefined``1(System.Int32)
+  name.vb: IsDefined(Of T)(Int32)
+  fullName: UniEnumUtils.UniEnum.IsDefined<T>(System.Int32)
+  fullName.vb: UniEnumUtils.UniEnum.IsDefined(Of T)(System.Int32)
+  nameWithType: UniEnum.IsDefined<T>(Int32)
+  nameWithType.vb: UniEnum.IsDefined(Of T)(Int32)
+- uid: UniEnumUtils.UniEnum.IsDefined``1(System.Int64)
+  name: IsDefined<T>(Int64)
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_IsDefined__1_System_Int64_
+  commentId: M:UniEnumUtils.UniEnum.IsDefined``1(System.Int64)
+  name.vb: IsDefined(Of T)(Int64)
+  fullName: UniEnumUtils.UniEnum.IsDefined<T>(System.Int64)
+  fullName.vb: UniEnumUtils.UniEnum.IsDefined(Of T)(System.Int64)
+  nameWithType: UniEnum.IsDefined<T>(Int64)
+  nameWithType.vb: UniEnum.IsDefined(Of T)(Int64)
+- uid: UniEnumUtils.UniEnum.IsDefined``1(System.SByte)
+  name: IsDefined<T>(SByte)
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_IsDefined__1_System_SByte_
+  commentId: M:UniEnumUtils.UniEnum.IsDefined``1(System.SByte)
+  name.vb: IsDefined(Of T)(SByte)
+  fullName: UniEnumUtils.UniEnum.IsDefined<T>(System.SByte)
+  fullName.vb: UniEnumUtils.UniEnum.IsDefined(Of T)(System.SByte)
+  nameWithType: UniEnum.IsDefined<T>(SByte)
+  nameWithType.vb: UniEnum.IsDefined(Of T)(SByte)
+- uid: UniEnumUtils.UniEnum.IsDefined``1(System.UInt16)
+  name: IsDefined<T>(UInt16)
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_IsDefined__1_System_UInt16_
+  commentId: M:UniEnumUtils.UniEnum.IsDefined``1(System.UInt16)
+  name.vb: IsDefined(Of T)(UInt16)
+  fullName: UniEnumUtils.UniEnum.IsDefined<T>(System.UInt16)
+  fullName.vb: UniEnumUtils.UniEnum.IsDefined(Of T)(System.UInt16)
+  nameWithType: UniEnum.IsDefined<T>(UInt16)
+  nameWithType.vb: UniEnum.IsDefined(Of T)(UInt16)
+- uid: UniEnumUtils.UniEnum.IsDefined``1(System.UInt32)
+  name: IsDefined<T>(UInt32)
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_IsDefined__1_System_UInt32_
+  commentId: M:UniEnumUtils.UniEnum.IsDefined``1(System.UInt32)
+  name.vb: IsDefined(Of T)(UInt32)
+  fullName: UniEnumUtils.UniEnum.IsDefined<T>(System.UInt32)
+  fullName.vb: UniEnumUtils.UniEnum.IsDefined(Of T)(System.UInt32)
+  nameWithType: UniEnum.IsDefined<T>(UInt32)
+  nameWithType.vb: UniEnum.IsDefined(Of T)(UInt32)
+- uid: UniEnumUtils.UniEnum.IsDefined``1(System.UInt64)
+  name: IsDefined<T>(UInt64)
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_IsDefined__1_System_UInt64_
+  commentId: M:UniEnumUtils.UniEnum.IsDefined``1(System.UInt64)
+  name.vb: IsDefined(Of T)(UInt64)
+  fullName: UniEnumUtils.UniEnum.IsDefined<T>(System.UInt64)
+  fullName.vb: UniEnumUtils.UniEnum.IsDefined(Of T)(System.UInt64)
+  nameWithType: UniEnum.IsDefined<T>(UInt64)
+  nameWithType.vb: UniEnum.IsDefined(Of T)(UInt64)
+- uid: UniEnumUtils.UniEnum.TryParse*
+  name: TryParse
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_TryParse_
+  commentId: Overload:UniEnumUtils.UniEnum.TryParse
+  isSpec: "True"
+  fullName: UniEnumUtils.UniEnum.TryParse
+  nameWithType: UniEnum.TryParse
+- uid: UniEnumUtils.UniEnum.TryParse``1(System.String,``0@)
+  name: TryParse<T>(String, out T)
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_TryParse__1_System_String___0__
+  commentId: M:UniEnumUtils.UniEnum.TryParse``1(System.String,``0@)
+  name.vb: TryParse(Of T)(String, ByRef T)
+  fullName: UniEnumUtils.UniEnum.TryParse<T>(System.String, out T)
+  fullName.vb: UniEnumUtils.UniEnum.TryParse(Of T)(System.String, ByRef T)
+  nameWithType: UniEnum.TryParse<T>(String, out T)
+  nameWithType.vb: UniEnum.TryParse(Of T)(String, ByRef T)
+- uid: UniEnumUtils.UniEnum.TryParse``1(System.String,System.Boolean,``0@)
+  name: TryParse<T>(String, Boolean, out T)
+  href: api/UniEnumUtils.UniEnum.html#UniEnumUtils_UniEnum_TryParse__1_System_String_System_Boolean___0__
+  commentId: M:UniEnumUtils.UniEnum.TryParse``1(System.String,System.Boolean,``0@)
+  name.vb: TryParse(Of T)(String, Boolean, ByRef T)
+  fullName: UniEnumUtils.UniEnum.TryParse<T>(System.String, System.Boolean, out T)
+  fullName.vb: UniEnumUtils.UniEnum.TryParse(Of T)(System.String, System.Boolean, ByRef T)
+  nameWithType: UniEnum.TryParse<T>(String, Boolean, out T)
+  nameWithType.vb: UniEnum.TryParse(Of T)(String, Boolean, ByRef T)
