@@ -27,9 +27,14 @@ jobs:
   unity-test:
     strategy:
       matrix:
-        unity: [2019.4.32f1]
+        projectPath:
+          - src/UniEnum.Unity
+        testMode:
+          - playmode
+          #- editmode
+        unityVersion: [auto]
         include:
-          - unity: 2019.4.32f1
+          - unityVersion: auto
             license: ULF_2019
     
     runs-on: ubuntu-latest
@@ -41,16 +46,27 @@ jobs:
       # Cache
       - uses: actions/cache@v2
         with:
-          path: src/UnitEnum.Unity/Library
-          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          path: ${{ matrix.projectPath }}/Library
+          key: Library-${{ matrix.projectPath }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
             Library-
 
       # Test
       - name: Run tests
         uses: game-ci/unity-test-runner@v2
+        id: tests
         env:
-          UNITY_LICENSE: ${{ secrets.ULF_2019 }}
+          UNITY_LICENSE: ${{ secrets[matrix.license] }}
         with:
+          projectPath: ${{ matrix.projectPath }}
+          unityVersion: ${{ matrix.unityVersion }}
+          testMode: ${{ matrix.testMode }}
+          artifactsPath: ${{ matrix.testMode }}-artifacts
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectPath: src/UniEnum.Unity
+          checkName: ${{ matrix.testMode }} Test Results
+
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: Test results for ${{ matrix.testMode }}
+          path: ${{ steps.tests.outputs.artifactsPath }}          
