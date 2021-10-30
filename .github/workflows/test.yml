@@ -27,9 +27,9 @@ jobs:
   unity-test:
     strategy:
       matrix:
-        unity: [2019.4.4f1]
+        unity: [2019.4.32f1]
         include:
-          - unity: 2019.4.4f1
+          - unity: 2019.4.32f1
             license: ULF_2019
     
     runs-on: ubuntu-latest
