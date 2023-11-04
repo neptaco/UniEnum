@@ -5,30 +5,39 @@ namespace UniEnumUtils
 {
     public static partial class UniEnum
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string GetName<T>(T v) where T : unmanaged, Enum
             => UnderlyingTypeInfo<T>.Operation.GetName(v); 
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ReadOnlyArray<string> GetNames<T>() where T : Enum 
             => NameCache<T>.ReadOnlyNames;
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ReadOnlyArray<T> GetValues<T>() where T : unmanaged, Enum 
             => ValueCache<T>.ReadOnlyValues;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GetCount<T>() where T : unmanaged, Enum
             => ValueCache<T>.ReadOnlyValues.Count;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T GetMinValue<T>() where T : unmanaged, Enum
             => UnderlyingTypeInfo<T>.Operation.GetMinValue();
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T GetMaxValue<T>() where T : unmanaged, Enum
             => UnderlyingTypeInfo<T>.Operation.GetMaxValue();
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsDefined<T>(T value) where T : unmanaged, Enum
             => UnderlyingTypeInfo<T>.Operation.IsDefined(value);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool TryParse<T>(string text, out T result) where T : unmanaged, Enum
             => TryParseInternal(text, false, out result);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool TryParse<T>(string text, bool ignoreCase, out T result) where T : unmanaged, Enum
             => TryParseInternal(text, ignoreCase, out result);
 
