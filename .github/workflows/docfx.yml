@@ -9,14 +9,15 @@ jobs:
   docfx:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: nikeee/docfx-action@v1.0.0
         with:
           args: docfx/docfx.json
 
-      # Publish generated site using GitHub Pages
-      - uses: maxheld83/ghpages@master
-        env:
-          BUILD_DIR: docfx/_site # docfx's default output directory is _site
-          GH_PAT: ${{ secrets.GH_PAT }} # See https://github.com/maxheld83/ghpages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docfx/_site
+
         
