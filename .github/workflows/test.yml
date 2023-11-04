@@ -49,7 +49,7 @@ jobs:
 
       # Test
       - name: Run tests
-        uses: game-ci/unity-test-runner@v2
+        uses: game-ci/unity-test-runner@v3
         id: tests
         env:
           UNITY_LICENSE: ${{ secrets[matrix.license] }}
