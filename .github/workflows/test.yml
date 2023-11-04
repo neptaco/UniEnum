@@ -28,7 +28,7 @@ jobs:
         testMode:
           - playmode
           #- editmode
-        unityVersion: [auto]
+        unityVersion: ["2021.3.31f1"]
         include:
           - unityVersion: auto
             license: UNITY_LICENSE
