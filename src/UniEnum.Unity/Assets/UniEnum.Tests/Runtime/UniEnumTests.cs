@@ -11,6 +11,7 @@ namespace UniEnumTests
 {
     public class UniEnumTests
     {
+        [UniEnum]
         [Flags]
         private enum Types
         {

@@ -2,10 +2,10 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-
         <IsPackable>false</IsPackable>
-
         <RootNamespace>UniEnum.NetCore.Test</RootNamespace>
+        <LangVersion>11</LangVersion>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
@@ -33,6 +33,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\UniEnum.SourceGenerator\UniEnum.SourceGenerator.csproj">
+          <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+          <OutputItemType>Analyzer</OutputItemType>
+      </ProjectReference>
       <ProjectReference Include="..\UniEnum.NetCore\UniEnum.NetCore.csproj" />
     </ItemGroup>
 

@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniEnum.NetCore.Tests", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniEnum.Benchmark", "src\UniEnum.Benchmark\UniEnum.Benchmark.csproj", "{00974BE2-49F1-4E42-8F8E-656E21481C80}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniEnum.SourceGenerator", "UniEnum.SourceGenerator\UniEnum.SourceGenerator.csproj", "{16408B22-7BD7-4A39-9585-F0933F8AF2CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{00974BE2-49F1-4E42-8F8E-656E21481C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00974BE2-49F1-4E42-8F8E-656E21481C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00974BE2-49F1-4E42-8F8E-656E21481C80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16408B22-7BD7-4A39-9585-F0933F8AF2CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16408B22-7BD7-4A39-9585-F0933F8AF2CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16408B22-7BD7-4A39-9585-F0933F8AF2CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16408B22-7BD7-4A39-9585-F0933F8AF2CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
